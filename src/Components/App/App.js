@@ -1,13 +1,15 @@
 import React from 'react';
-import ContentContainer from '../ContentContainer/ContentContainer';
+import DriverMap from '../DriverMap/DriverMap';
 
 const App = () => {
 
   return (
-    <div>
+    <main>
       <h1>Routes</h1>
-      <ContentContainer />
-    </div>
+      <div className="content-container">
+        <DriverMap />
+      </div>
+    </main>
   )
 }
 
