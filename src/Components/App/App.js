@@ -1,5 +1,6 @@
 import React from 'react';
 import DriverMap from '../DriverMap/DriverMap';
+import Welcome from '../Welcome/Welcome';
 
 const App = () => {
 
@@ -7,6 +8,7 @@ const App = () => {
     <main>
       <h1>Routes</h1>
       <div className="content-container">
+        <Welcome />
         <DriverMap />
       </div>
     </main>
