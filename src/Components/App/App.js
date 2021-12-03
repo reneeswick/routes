@@ -1,5 +1,8 @@
 import React from 'react';
-import DriverMap from '../DriverMap/DriverMap';
+import './App.css';
+import Welcome from '../Welcome/Welcome';
+import DynamicMap from '../DynamicMap/DynamicMap';
+//comment
 
 const App = () => {
 
@@ -7,7 +10,8 @@ const App = () => {
     <main>
       <h1>Routes</h1>
       <div className="content-container">
-        <DriverMap />
+        <Welcome />
+        <DynamicMap />
       </div>
     </main>
   )
