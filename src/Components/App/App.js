@@ -16,7 +16,12 @@ const App = () => {
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          <Marker position={[32.886520, -117.152680]}>
+          <Marker position={[32.886520, -117.2263]}>
+            <Popup>
+              Sea World
+            </Popup>
+          </Marker>
+          <Marker position={[32.7641, -117.152680]}>
             <Popup>
               San Diego Medical Waste
             </Popup>
