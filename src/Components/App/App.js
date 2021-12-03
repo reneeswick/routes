@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Welcome from '../Welcome/Welcome';
 import DynamicMap from '../DynamicMap/DynamicMap';
+//comment
 
 const App = () => {
 
