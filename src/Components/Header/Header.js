@@ -1,12 +1,13 @@
-import React from 'react'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
     return (
         <div>
           <h1>Routes</h1>
           <nav>
-            <button>Driver</button>
-            <button>Customer</button>
+            <NavLink to = '/driver' > Driver </NavLink>
+            <NavLink to = '/customer'> Customer </NavLink>
           </nav>
         </div>
     )

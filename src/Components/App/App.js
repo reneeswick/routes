@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route, Link } from 'react-router-dom';
 import './App.css';
 import Header from '../Header/Header';
 import DriverDashboard from '../DriverDashboard/DriverDashboard';
@@ -10,8 +11,8 @@ const App = () => {
     <main>
       <Header />
       <div className="content-container">
-        <DriverDashboard />
-        <CustomerDashboard />
+        <Route exact path = '/driver' render = {() => <DriverDashboard />} />
+        <Route exact path = '/customer' render = {() => <CustomerDashboard />} />
       </div>
     </main>
   )
