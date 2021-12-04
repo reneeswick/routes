@@ -30,7 +30,6 @@ const DynamicMap = ({}) => {
                 </Marker> */}
                 <RoutingMachine locations={trialLocations}/>
             </MapContainer>
-            <RouteCard locations={trialLocations}/>
         </div>
     )
 }
