@@ -1,6 +1,9 @@
 import React from 'react';
 
 const DynamicTracking = () => {
+  /*
+  Interpolate number of stops away with the amount of customers serviced === true
+  */
 
   return (
     <div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import DynamicMap from '../DynamicMap/DynamicMap';
 import Welcome from '../Welcome/Welcome';
-import RouteCard from '../RouteCard/RouteCard';
+import RouteCardsContainer from '../RouteCardsContainer/RouteCardsContainer';
 
 const DriverDashboard = () => {
   const trialLocations = [
@@ -14,7 +14,7 @@ const DriverDashboard = () => {
     <div>
       <Welcome />
       <DynamicMap />
-      <RouteCard locations={trialLocations}/>
+      <RouteCardsContainer locations={trialLocations}/>
     </div>
   )
 

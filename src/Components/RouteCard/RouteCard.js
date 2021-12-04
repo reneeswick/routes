@@ -7,7 +7,7 @@ const RouteCard = ({locations}) => {
       <div>
         <div>{location.companyName}</div>
         <div>{location.containerAmt}</div>
-        <button>Service Complete</button>
+        <button>Service Completed</button>
       </div>
     )
   })
