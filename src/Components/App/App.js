@@ -1,8 +1,7 @@
 import React from 'react';
 import './App.css';
-import Welcome from '../Welcome/Welcome';
-import DynamicMap from '../DynamicMap/DynamicMap';
 import Header from '../Header/Header';
+import DriverDashboard from '../DriverDashboard/DriverDashboard';
 
 //comment
 
@@ -12,8 +11,7 @@ const App = () => {
     <main>
       <Header />
       <div className="content-container">
-        <Welcome />
-        <DynamicMap />
+        <DriverDashboard />
       </div>
     </main>
   )
