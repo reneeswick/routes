@@ -6,7 +6,7 @@ const RouteCard = ({locations}) => {
     return (
       <div>
         <div>{location.companyName}</div>
-        <div>{location.containerAmt}</div>
+        <div>Amount of containers: {location.containerAmt}</div>
         <button>Service Completed</button>
       </div>
     )
