@@ -2,8 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from '../Header/Header';
 import DriverDashboard from '../DriverDashboard/DriverDashboard';
-
-//comment
+import CustomerDashboard from '../CustomerDashboard/CustomerDashboard';
 
 const App = () => {
 
@@ -12,6 +11,7 @@ const App = () => {
       <Header />
       <div className="content-container">
         <DriverDashboard />
+        <CustomerDashboard />
       </div>
     </main>
   )
