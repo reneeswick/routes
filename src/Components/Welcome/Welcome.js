@@ -3,7 +3,7 @@ import React from 'react';
 const Welcome = () => {
 
   return (
-    <p>Welcome message here</p>
+    <p>Welcome User</p>
   )
 }
 
