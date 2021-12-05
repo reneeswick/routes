@@ -1,6 +1,7 @@
 import React from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import RoutingMachine from './RoutingMachine'
+import RoutingMachine from './RoutingMachine';
+import RouteCard from '../RouteCard/RouteCard';
 
 
 const DynamicMap = ({}) => {
@@ -34,4 +35,3 @@ const DynamicMap = ({}) => {
 }
 
 export default DynamicMap
-

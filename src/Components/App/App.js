@@ -1,17 +1,18 @@
 import React from 'react';
+import { Route, Link } from 'react-router-dom';
 import './App.css';
-import Welcome from '../Welcome/Welcome';
-import DynamicMap from '../DynamicMap/DynamicMap';
-//comment
+import Header from '../Header/Header';
+import DriverDashboard from '../DriverDashboard/DriverDashboard';
+import CustomerDashboard from '../CustomerDashboard/CustomerDashboard';
 
 const App = () => {
 
   return (
     <main>
-      <h1>Routes</h1>
+      <Header />
       <div className="content-container">
-        <Welcome />
-        <DynamicMap />
+        <Route exact path = '/driver' render = {() => <DriverDashboard />} />
+        <Route exact path = '/customer' render = {() => <CustomerDashboard />} />
       </div>
     </main>
   )
