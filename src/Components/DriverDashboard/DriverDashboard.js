@@ -36,7 +36,7 @@ const DriverDashboard = () => {
   }
 
   return (
-    <div>
+    <div className="dashboard">
       <Welcome />
       <Calendar submitDate={submitDate}/>
       <DynamicMap />
