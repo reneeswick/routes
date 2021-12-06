@@ -8,9 +8,10 @@ import CustomerDashboard from '../CustomerDashboard/CustomerDashboard';
 const App = () => {
 
   return (
-    <main>
+    <main >
       <Header />
       <div className="content-container">
+        <Route exact path = '/' render = {() => <LandingPage />} />
         <Route exact path = '/driver' render = {() => <DriverDashboard />} />
         <Route exact path = '/customer' render = {() => <CustomerDashboard />} />
       </div>

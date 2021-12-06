@@ -1,4 +1,11 @@
-.map {
-  width: 70vw;
-  height: 70vh;
+.dashboard{
+  width: 100%;
+}
+
+.content-container{
+  padding: 0px 20px;
+  overflow: visible;
+  display: flex;
+  max-width: 1150px;
+  margin: auto;
 }
