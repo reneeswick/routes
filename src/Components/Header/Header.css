@@ -75,7 +75,7 @@
       padding-top: 15px;
       display: inline-block;
       position: absolute;
-      right: 0px;
+      right: 5px;
       top: 0px;
     }
     .nav > .nav-btn > label {
@@ -125,7 +125,7 @@
       flex-direction: column;
       width: 100%;
       backdrop-filter: blur(5px); 
-      background-color: #b9eeff62;
+      background-color: #b9edffd0;
       transition: all 0.8s ease-in;
       overflow-y: scroll;
       top: 80px;
@@ -142,7 +142,7 @@
       height: 0px;
     }
     .nav > #nav-check:checked ~ .nav-links {
-      height: calc(100vh - 80px);
+      height: calc(100vh - 100px);
       overflow-y: auto;
     }
   }
