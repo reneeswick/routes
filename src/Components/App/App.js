@@ -4,6 +4,7 @@ import './App.css';
 import Header from '../Header/Header';
 import DriverDashboard from '../DriverDashboard/DriverDashboard';
 import CustomerDashboard from '../CustomerDashboard/CustomerDashboard';
+import LandingPage from '../LandingPage/LandingPage';
 
 const App = () => {
 
@@ -11,7 +12,7 @@ const App = () => {
     <main >
       <Header />
       <div className="content-container">
-        <Route exact path = '/' render = {() => <LandingPage />} />
+        <Route exact path = {['/home', '/']} render = {() => <LandingPage />} />
         <Route exact path = '/driver' render = {() => <DriverDashboard />} />
         <Route exact path = '/customer' render = {() => <CustomerDashboard />} />
       </div>

@@ -9,3 +9,26 @@
   max-width: 1150px;
   margin: auto;
 }
+
+.button {
+  width: 120px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  color: #000;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-left: 30px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  display: inline-block;
+  border: 2px solid #14B7FB;
+  background-color: #14B7FB;
+  border-radius: 20px;
+  color: #fff;
+  transition: .3s;
+}
+.button:hover {
+  box-shadow: 8px 8px #0059ff;
+  transition: .3s;
+}
