@@ -15,6 +15,7 @@
   background-color:rgba(223, 223, 223, 0.5);
   border-radius: .5rem;
   border: 2px solid rgba(73, 209, 219, 0.199);
+  /* box-shadow: 1px 1px 1px black; */
 }
 
 .company-name {
