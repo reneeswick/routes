@@ -1,9 +1,10 @@
 import React from 'react';
+import './Welcome.css';
 
 const Welcome = () => {
 
   return (
-    <p>Welcome User</p>
+    <h1 className="subheader">Welcome User</h1>
   )
 }
 

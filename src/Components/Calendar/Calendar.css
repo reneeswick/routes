@@ -1,0 +1,17 @@
+.calendar-container {
+  color: #1E2A6A;
+}
+
+.btn-stndrd {
+  background-color: #BFD2F8;
+  border-radius: 50px;
+  margin: .5rem;
+  padding: 13px 35px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-stndrd:hover {
+  transform: scale(1.1);
+  transition: .3s;
+}

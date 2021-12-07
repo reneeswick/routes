@@ -1,5 +1,6 @@
 import React from 'react';
 import RouteCard from '../RouteCard/RouteCard';
+import './RouteCardsContainer.css';
 
 const RouteCardsContainer = ({ locations }) => {
   /*
@@ -8,8 +9,10 @@ const RouteCardsContainer = ({ locations }) => {
 
   return (
     <div>
-      <RouteCard locations = {locations}/>
-      <button>Route Completed</button>
+      <div className="route-cards-container" >
+        <RouteCard locations={locations}/>
+      </div>
+      <button className="btn-stndrd">Route Completed</button>
     </div>
   )
 

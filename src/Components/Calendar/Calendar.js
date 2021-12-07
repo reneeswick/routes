@@ -1,18 +1,20 @@
 import React, {useState} from 'react';
+import './Calendar.css';
 
 const Calendar = ({ submitDate }) => {
   const [day, setDay] = useState('');
 
   return (
-    <div>
+    <div className="calendar-container">
       <h2>Select a date of service</h2>
-      <input
+      <input className="calendar"
         type = 'date'
         name = 'date'
         value = {day}
         onChange = {event => {setDay(event.target.value)}}
       />
-      <button onClick={()=>submitDate(day)}>Generate my route</button>
+      <button className= "btn-stndrd" onClick={()=>submitDate(day)}>Generate My Route
+      </button>
     </div>
   )
 }

@@ -7,9 +7,11 @@ import Calendar from '../Calendar/Calendar';
 const DriverDashboard = () => {
   /////////Test Data///////////
   const trialLocations = [
-      {position: 0, companyName:"Company Name", containerAmt: 2, lat:32.7641, lng:-117.152680},
+      {position: 0, companyName:"Company Name1", containerAmt: 2, lat:32.7641, lng:-117.152680},
       {position: 1, companyName:"Company Name2", containerAmt: 1, lat:32.886520, lng:-117.2263},
-      {position: 2, companyName:"Company Name3", containerAmt: 3, lat:38.6570351, lng:-104.0962085},
+      {position: 2, companyName:"Company Name3", containerAmt: 3, lat:35.6570351, lng:-105.0962085},
+      {position: 3, companyName:"Company Name4", containerAmt: 5, lat:36.6570351, lng:-106.0962085},
+      {position: 4, companyName:"Company Name5", containerAmt: 8, lat:37.6570351, lng:-107.0962085},
   ]
 ////////////////////////////////
   const [selectedDay, setSelectedDay] = useState('')
