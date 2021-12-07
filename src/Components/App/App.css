@@ -10,7 +10,7 @@ main {
   padding: 0px 20px;
   overflow: visible;
   display: flex;
-  max-width: 1150px;
+  max-width: 1150px; /*Causing some styling issues on other pages*/
   margin: auto;
 }
 
