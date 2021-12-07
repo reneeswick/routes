@@ -1,6 +1,9 @@
 .subheader {
-  height: 200px;
-  /* left: 0px; */
-  top: 160px;
+  display: flex;
+  align-items: flex-end;
+  height: 3rem;
+  margin: 0;
+  width: 100vw;
+  font-size: 18pt;
   border-bottom: 5px solid #1E2A6A;
 }

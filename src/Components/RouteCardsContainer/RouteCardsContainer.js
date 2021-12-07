@@ -9,9 +9,7 @@ const RouteCardsContainer = ({ locations }) => {
 
   return (
     <div>
-      <div className="route-cards-container" >
-        <RouteCard locations={locations}/>
-      </div>
+      <RouteCard locations={locations}/>
       <button className="btn-stndrd">Route Completed</button>
     </div>
   )

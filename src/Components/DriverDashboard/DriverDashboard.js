@@ -3,6 +3,7 @@ import DynamicMap from '../DynamicMap/DynamicMap';
 import Welcome from '../Welcome/Welcome';
 import RouteCardsContainer from '../RouteCardsContainer/RouteCardsContainer';
 import Calendar from '../Calendar/Calendar';
+import './DriverDashboard.css';
 
 const DriverDashboard = () => {
   /////////Test Data///////////
@@ -38,11 +39,13 @@ const DriverDashboard = () => {
   }
 
   return (
-    <div className="dashboard">
+    <div className="driver-dashboard">
       <Welcome />
       <Calendar submitDate={submitDate}/>
-      <DynamicMap />
-      <RouteCardsContainer locations={trialLocations}/>
+      <div className="route-container">
+        <DynamicMap />
+        <RouteCardsContainer locations={trialLocations}/>
+      </div>
     </div>
   )
 

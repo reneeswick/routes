@@ -6,7 +6,7 @@ const Calendar = ({ submitDate }) => {
 
   return (
     <div className="calendar-container">
-      <h2>Select a date of service</h2>
+      <h2 className="calendar-prompt">Select a date of service</h2>
       <input className="calendar"
         type = 'date'
         name = 'date'

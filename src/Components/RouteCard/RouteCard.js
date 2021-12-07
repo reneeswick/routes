@@ -6,15 +6,15 @@ const RouteCard = ({locations}) => {
   const cards = locations.map((location) => {
     return (
       <div className='route-card'>
-        <div>{location.companyName}</div>
-        <div>Amount of containers: {location.containerAmt}</div>
-        <button>Service Completed</button>
+        <div className='company-name'>{location.companyName}</div>
+        <div className='container-cnt'>Containers: {location.containerAmt}</div>
+        <button className="service-completed-btn">Service Completed</button>
       </div>
     )
   })
 
   return (
-    <p>{cards}</p>
+    <p className='route-cards-container'>{cards}</p>
   )
 
 }
