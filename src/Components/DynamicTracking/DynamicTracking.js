@@ -10,6 +10,7 @@ const DynamicTracking = () => {
     <div className='tracking-msg'>
       <p>Your driver is 5 stops away!</p>
       <p>They will arrive in approximately 45 minutes</p>
+      <button className='btn-stndrd'>Update Tracking</button>
     </div>
   )
 }
