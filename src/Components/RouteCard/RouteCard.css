@@ -22,8 +22,13 @@
   font-weight: bold;
 }
 
-.container-cnt {
-  font-weight:400;
+.disp-label, .disp-time {
+  font-weight:100;
+  font-size: 8pt;
+}
+
+.disp-time {
+  color: #800000;
 }
 
 .service-completed-btn {

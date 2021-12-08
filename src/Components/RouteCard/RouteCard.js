@@ -7,7 +7,8 @@ const RouteCard = ({locations}) => {
     return (
       <div className='route-card'>
         <div className='company-name'>{location.name}</div>
-        <div className='container-cnt'>Disposal Time: {location.disposalTime} mins</div>
+        <div className='disp-label'>Estimated Disposal Time: </div>
+        <div className='disp-time'>{location.disposalTime} mins</div>
         <button className="service-completed-btn">Service Completed</button>
       </div>
     )
