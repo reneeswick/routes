@@ -1,3 +1,8 @@
+main {
+  color: #1E2A6A;
+  font-family: 'Red Hat Display', sans-serif;
+}
+
 .dashboard{
   width: 100%;
 }
@@ -6,7 +11,7 @@
   padding: 0px 20px;
   overflow: visible;
   display: flex;
-  max-width: 1150px;
+  max-width: 1150px; /*Causing some styling issues on other pages*/
   margin: auto;
 }
 

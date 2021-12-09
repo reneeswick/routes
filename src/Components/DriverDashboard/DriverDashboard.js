@@ -3,13 +3,16 @@ import DynamicMap from '../DynamicMap/DynamicMap';
 import Welcome from '../Welcome/Welcome';
 import RouteCardsContainer from '../RouteCardsContainer/RouteCardsContainer';
 import Calendar from '../Calendar/Calendar';
+import './DriverDashboard.css';
 
 const DriverDashboard = () => {
   /////////Test Data///////////
   const trialLocations = [
-      {position: 0, companyName:"Company Name", containerAmt: 2, lat:32.7641, lng:-117.152680},
-      {position: 1, companyName:"Company Name2", containerAmt: 1, lat:32.886520, lng:-117.2263},
-      {position: 2, companyName:"Company Name3", containerAmt: 3, lat:38.6570351, lng:-104.0962085},
+      {name:"Company Name1", disposalTime: 10, latitude:32.7641, longitude:-117.152680, city: 'San Diego', state: 'California', streetAddress: '123 America Way'},
+      {name:"Company Name2", disposalTime: 15, latitude:32.886520, longitude:-117.2263, city: 'San Diego', state: 'California', streetAddress: '123 America Way'},
+      {name:"Company Name3", disposalTime: 25, latitude:35.6570351, longitude:-105.0962085, city: 'San Diego', state: 'California', streetAddress: '123 America Way'},
+      {name:"Company Name4", disposalTime: 10, latitude:36.6570351, longitude:-106.0962085, city: 'San Diego', state: 'California', streetAddress: '123 America Way'},
+      {name:"Company Name5", disposalTime: 30, latitude:37.6570351, longitude:-107.0962085, city: 'San Diego', state: 'California', streetAddress: '123 America Way'},
   ]
 ////////////////////////////////
   const [selectedDay, setSelectedDay] = useState('')
@@ -36,11 +39,13 @@ const DriverDashboard = () => {
   }
 
   return (
-    <div className="dashboard">
+    <div className="driver-dashboard">
       <Welcome />
       <Calendar submitDate={submitDate}/>
-      <DynamicMap />
-      <RouteCardsContainer locations={trialLocations}/>
+      <div className="route-container">
+        <DynamicMap />
+        <RouteCardsContainer locations={trialLocations}/>
+      </div>
     </div>
   )
 

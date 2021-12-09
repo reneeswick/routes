@@ -1,0 +1,46 @@
+.route-cards-container {
+  margin: 0;
+}
+
+.route-card {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  align-content: center;
+  justify-items: center;
+  border: 2px solid #1E2A6A;
+  /* width: 24rem;
+  height: 4rem; */
+  margin: .25rem;
+  padding: .5rem;
+  background-color:rgba(223, 223, 223, 0.5);
+  border-radius: .5rem;
+  border: 2px solid rgba(73, 209, 219, 0.199);
+  box-shadow: 1px 1px 1px black;
+}
+
+.company-name {
+  font-weight: bold;
+}
+
+.disp-label, .disp-time {
+  font-weight:100;
+  font-size: 8pt;
+}
+
+.disp-time {
+  color: #800000;
+}
+
+.service-completed-btn {
+  background-color: #159EEC;
+  border: none;
+  color: white;
+  border-radius: 30rem;
+  cursor: pointer;
+}
+
+.service-completed-btn:hover {
+  background-color: #1E2A6A;
+  color: white;
+  transition: .5s;
+}
