@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 import DynamicMap from '../DynamicMap/DynamicMap';
 import Welcome from '../Welcome/Welcome';
 import RouteCardsContainer from '../RouteCardsContainer/RouteCardsContainer';
@@ -46,6 +47,9 @@ const DriverDashboard = () => {
         <DynamicMap />
         <RouteCardsContainer locations={trialLocations}/>
       </div>
+      <Link to='/add-new-customer'>
+        <button className='btn-stndrd'>Add New Customer</button>
+      </Link>
     </div>
   )
 

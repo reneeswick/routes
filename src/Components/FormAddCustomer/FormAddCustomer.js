@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const FormAddCustomer = () => {
   const [customerName, setCustomerName] = useState('');
@@ -70,7 +71,10 @@ const FormAddCustomer = () => {
           <option value='Saturday'>Saturday</option>
         </select>
       </form>
-      <button onClick={()=>{submitNewCustomer()}}>Create New Customer</button>
+      <button className='btn-stndrd' onClick={()=>{submitNewCustomer()}}>Create New Customer</button>
+      <Link to='/driver'>
+        <button className='secondary-btn'>Return to Driver Dashboard</button>
+      </Link>
     </div>
   )
 }

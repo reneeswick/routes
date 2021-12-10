@@ -31,7 +31,7 @@
   color: #800000;
 }
 
-.service-completed-btn {
+.secondary-btn {
   background-color: #159EEC;
   border: none;
   color: white;
@@ -39,7 +39,7 @@
   cursor: pointer;
 }
 
-.service-completed-btn:hover {
+.secondary-btn:hover {
   background-color: #1E2A6A;
   color: white;
   transition: .5s;
