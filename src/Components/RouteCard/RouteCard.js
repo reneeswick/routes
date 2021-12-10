@@ -5,7 +5,7 @@ const RouteCard = ({locations}) => {
 
   const cards = locations.map((location) => {
     return (
-      <div className='route-card'>
+      <div key={`${location.name}${location.latitude}`} className='route-card'>
         <div className='company-name'>{location.name}</div>
         <div className='disp-label'>Estimated Disposal Time: </div>
         <div className='disp-time'>{location.disposalTime} mins</div>
@@ -15,7 +15,7 @@ const RouteCard = ({locations}) => {
   })
 
   return (
-    <p className='route-cards-container'>{cards}</p>
+    <section className='route-cards-container'>{cards}</section>
   )
 
 }
