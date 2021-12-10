@@ -12,7 +12,19 @@ export const getRoutingData = (driverID, day) => {
         "content-type": "application/json",
         "Access-Control-Allow-Headers": "Accept",
     };
-
+    const query = `{
+        routeRequest (driver: ${driverID}, pickupDay: "Monday")
+            {
+                name
+                streetAddress
+                city
+                state
+                latitude
+                longitude
+                disposalTime
+            }
+        
+        }`
 
     return axios({
         method: "POST",
@@ -21,19 +33,7 @@ export const getRoutingData = (driverID, day) => {
         data: 
         JSON.stringify({
             query: (
-                `{
-                routeRequest (driver: 1, pickupDay: "Monday")
-                    {
-                        name
-                        streetAddress
-                        city
-                        state
-                        latitude
-                        longitude
-                        disposalTime
-                    }
-                
-                }`
+                `${query}`
             )
         })
     })
