@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import './FormAddCustomer.css';
 
 const FormAddCustomer = () => {
   const [customerName, setCustomerName] = useState('');
@@ -37,7 +38,7 @@ const FormAddCustomer = () => {
 
   return (
     <div>
-      <form>
+      <form className='add-new-customer-form'>
         <input
           type='text'
           name='customerName'

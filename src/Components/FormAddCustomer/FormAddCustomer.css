@@ -1,0 +1,4 @@
+.add-new-customer-form {
+  display: flex;
+  flex-direction: column;
+}
