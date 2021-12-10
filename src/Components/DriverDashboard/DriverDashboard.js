@@ -1,9 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import DynamicMap from '../DynamicMap/DynamicMap';
 import Welcome from '../Welcome/Welcome';
 import RouteCardsContainer from '../RouteCardsContainer/RouteCardsContainer';
 import Calendar from '../Calendar/Calendar';
 import './DriverDashboard.css';
+import {getRoutingData} from './../../util/api'
 
 const DriverDashboard = () => {
   /////////Test Data///////////
@@ -17,6 +18,13 @@ const DriverDashboard = () => {
 ////////////////////////////////
   const [selectedDay, setSelectedDay] = useState('')
 
+  useEffect(() => {
+    getRoutingData()
+    .then(data => console.log(data))
+  }, [])
+
+  const makeAPICall = () => {
+  }
   const submitDate = (date) => {
     let officialDate = new Date(date)
     let dayIndex = officialDate.getDay()
