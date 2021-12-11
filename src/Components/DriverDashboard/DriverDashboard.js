@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import {Link} from "react-router-dom"
 import DynamicMap from "../DynamicMap/DynamicMap";
 import Welcome from "../Welcome/Welcome";
 import RouteCardsContainer from "../RouteCardsContainer/RouteCardsContainer";
@@ -55,6 +56,9 @@ const DriverDashboard = () => {
   return (
     <div className="driver-dashboard">
       <Welcome />
+      <Link to='/add-new-customer'>
+        <button className='btn-stndrd add-new-customer'>Add New Customer</button>
+      </Link>
       <Calendar submitDate={submitDate}/>
       <div className="route-container">
         <DynamicMap locations={routeLocations}/>
