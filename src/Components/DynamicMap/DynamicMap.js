@@ -11,7 +11,7 @@ const DynamicMap = ({ locations }) => {
     }
 
     return (
-        <div key='map-container' className="map-container">
+        <div className="map-container">
             <MapContainer className="map" center={[32.886520, -117.152680]} zoom={13} scrollWheelZoom={true}>
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -27,7 +27,7 @@ const DynamicMap = ({ locations }) => {
                         San Diego Medical Waste
                     </Popup>
                 </Marker> */}
-                <RoutingMachine key={locations.length} locations={locations}/>
+                <RoutingMachine locations={locations}/>
             </MapContainer>
         </div>
     )

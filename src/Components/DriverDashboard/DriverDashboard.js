@@ -5,9 +5,9 @@ import Welcome from "../Welcome/Welcome";
 import RouteCardsContainer from "../RouteCardsContainer/RouteCardsContainer";
 import Calendar from "../Calendar/Calendar";
 import "./DriverDashboard.css";
-import {getRoutingData} from "./../../util/api"
+import {getRoutingData, markLocationComplete} from "./../../util/api"
 
-let driverID = 1;
+let driverID = 4;
 
 const DriverDashboard = () => {
   /////////Test Data///////////
@@ -25,11 +25,24 @@ const DriverDashboard = () => {
   useEffect(() => {
     getRoutingData(driverID, selectedDay)
     // .then(data => setRouteLocations(data))
-    .then(data => console.log(data))
-    .then(data => setRouteLocations(data.data.data.routeRequest))
-  }, [selectedDay])
+    .then(data => setRouteLocations(data.data.routeRequest))
+  }, [])
 
   const makeAPICall = () => {
+  }
+
+  //I changed updatedState to mutatedState for my own sake
+  const markCompleted = (location) => {
+    //remove selected route location from state 
+    setRouteLocations((prevState) => {
+      console.log(location);
+      const indexOfElement = routeLocations.indexOf(location);
+      // prevState.splice(indexOfElement, 1);
+      // swtich location.name to locaion.id
+      return prevState.filter(locations => locations.name !== location.name);
+      // return prevState;
+    })
+    //update selected route API data (pickedUP:true)
   }
 
   const submitDate = (date) => {
@@ -62,7 +75,7 @@ const DriverDashboard = () => {
       <Calendar submitDate={submitDate}/>
       <div className="route-container">
         <DynamicMap locations={routeLocations}/>
-        <RouteCardsContainer locations={routeLocations}/>
+        <RouteCardsContainer  key={routeLocations.length} markCompleted = {markCompleted} locations={routeLocations}/>
       </div>
     </div>
   )
