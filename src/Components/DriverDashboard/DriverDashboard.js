@@ -44,7 +44,7 @@ const DriverDashboard = () => {
       <Welcome />
       <Calendar submitDate={submitDate}/>
       <div className="route-container">
-        <DynamicMap />
+        <DynamicMap locations={trialLocations} />
         <RouteCardsContainer locations={trialLocations}/>
       </div>
       <Link to='/add-new-customer'>
