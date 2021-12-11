@@ -1,21 +1,21 @@
 import React from 'react';
 import './RouteCard.css';
 
-const RouteCard = ({locations}) => {
+const RouteCard = ({locations, markCompleted}) => {
 
-  const cards = locations.map((location) => {
+  const cards = locations.map((location, i) => {
     return (
-      <div className='route-card'>
+      <div key={`${i}${Date.now()}`} className='route-card'>
         <div className='company-name'>{location.name}</div>
         <div className='disp-label'>Estimated Disposal Time: </div>
         <div className='disp-time'>{location.disposalTime} mins</div>
-        <button className='secondary-btn'>Service Completed</button>
+        <button onClick = {()=> markCompleted(location)} className='secondary-btn'>Service Completed</button>
       </div>
     )
   })
 
   return (
-    <p className='route-cards-container'>{cards}</p>
+    <section  className='route-cards-container'>{cards}</section>
   )
 
 }

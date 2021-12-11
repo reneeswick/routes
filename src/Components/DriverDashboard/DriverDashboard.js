@@ -1,41 +1,68 @@
-import React, {useState} from 'react';
-import { Link } from 'react-router-dom';
-import DynamicMap from '../DynamicMap/DynamicMap';
-import Welcome from '../Welcome/Welcome';
-import RouteCardsContainer from '../RouteCardsContainer/RouteCardsContainer';
-import Calendar from '../Calendar/Calendar';
-import './DriverDashboard.css';
+import React, {useState, useEffect} from "react";
+import {Link} from "react-router-dom"
+import DynamicMap from "../DynamicMap/DynamicMap";
+import Welcome from "../Welcome/Welcome";
+import RouteCardsContainer from "../RouteCardsContainer/RouteCardsContainer";
+import Calendar from "../Calendar/Calendar";
+import "./DriverDashboard.css";
+import {getRoutingData, markLocationComplete} from "./../../util/api"
+
+let driverID = 4;
 
 const DriverDashboard = () => {
   /////////Test Data///////////
   const trialLocations = [
-      {name:"Company Name1", disposalTime: 10, latitude:32.7641, longitude:-117.152680, city: 'San Diego', state: 'California', streetAddress: '123 America Way'},
-      {name:"Company Name2", disposalTime: 15, latitude:32.886520, longitude:-117.2263, city: 'San Diego', state: 'California', streetAddress: '123 America Way'},
-      {name:"Company Name3", disposalTime: 25, latitude:35.6570351, longitude:-105.0962085, city: 'San Diego', state: 'California', streetAddress: '123 America Way'},
-      {name:"Company Name4", disposalTime: 10, latitude:36.6570351, longitude:-106.0962085, city: 'San Diego', state: 'California', streetAddress: '123 America Way'},
-      {name:"Company Name5", disposalTime: 30, latitude:37.6570351, longitude:-107.0962085, city: 'San Diego', state: 'California', streetAddress: '123 America Way'},
+      {name:"Company Name1", disposalTime: 10, latitude:32.7641, longitude:-117.152680, city: "San Diego", state: "California", streetAddress: "123 America Way"},
+      {name:"Company Name2", disposalTime: 15, latitude:32.886520, longitude:-117.2263, city: "San Diego", state: "California", streetAddress: "123 America Way"},
+      {name:"Company Name3", disposalTime: 25, latitude:35.6570351, longitude:-105.0962085, city: "San Diego", state: "California", streetAddress: "123 America Way"},
+      {name:"Company Name4", disposalTime: 10, latitude:36.6570351, longitude:-106.0962085, city: "San Diego", state: "California", streetAddress: "123 America Way"},
+      {name:"Company Name5", disposalTime: 30, latitude:37.6570351, longitude:-107.0962085, city: "San Diego", state: "California", streetAddress: "123 America Way"},
   ]
 ////////////////////////////////
-  const [selectedDay, setSelectedDay] = useState('')
+  const [selectedDay, setSelectedDay] = useState("")
+  const [routeLocations, setRouteLocations] = useState([])
+
+  useEffect(() => {
+    getRoutingData(driverID, selectedDay)
+    // .then(data => setRouteLocations(data))
+    .then(data => setRouteLocations(data.data.routeRequest))
+  }, [])
+
+  const makeAPICall = () => {
+  }
+
+  //I changed updatedState to mutatedState for my own sake
+  const markCompleted = (location) => {
+    //remove selected route location from state 
+    setRouteLocations((prevState) => {
+      console.log(location);
+      const indexOfElement = routeLocations.indexOf(location);
+      // prevState.splice(indexOfElement, 1);
+      // swtich location.name to locaion.id
+      return prevState.filter(locations => locations.name !== location.name);
+      // return prevState;
+    })
+    //update selected route API data (pickedUP:true)
+  }
 
   const submitDate = (date) => {
     let officialDate = new Date(date)
     let dayIndex = officialDate.getDay()
 
     if (dayIndex === 0) {
-      setSelectedDay('Monday')
+      setSelectedDay("Monday")
     } else if (dayIndex === 1) {
-      setSelectedDay('Tuesday')
+      setSelectedDay("Tuesday")
     } else if (dayIndex === 2) {
-      setSelectedDay('Wednesday')
+      setSelectedDay("Wednesday")
     } else if (dayIndex === 3) {
-      setSelectedDay('Thursday')
+      setSelectedDay("Thursday")
     } else if (dayIndex === 4) {
-      setSelectedDay('Friday')
+      setSelectedDay("Friday")
     } else if (dayIndex === 5) {
-      setSelectedDay('Saturday')
+      setSelectedDay("Saturday")
     } else {
-      setSelectedDay('Sunday')
+      setSelectedDay("Sunday")
     }
   }
 
@@ -47,8 +74,8 @@ const DriverDashboard = () => {
       </Link>
       <Calendar submitDate={submitDate}/>
       <div className="route-container">
-        <DynamicMap locations={trialLocations} />
-        <RouteCardsContainer locations={trialLocations}/>
+        <DynamicMap locations={routeLocations}/>
+        <RouteCardsContainer  key={routeLocations.length} markCompleted = {markCompleted} locations={routeLocations}/>
       </div>
     </div>
   )
@@ -56,3 +83,7 @@ const DriverDashboard = () => {
 }
 
 export default DriverDashboard;
+
+
+// get routingData - update state with data
+//

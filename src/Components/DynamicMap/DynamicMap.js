@@ -6,6 +6,9 @@ import './DynamicMap.css'
 
 
 const DynamicMap = ({ locations }) => {
+    if(!locations){
+        locations=[]
+    }
 
     return (
         <div className="map-container">
@@ -31,3 +34,5 @@ const DynamicMap = ({ locations }) => {
 }
 
 export default DynamicMap
+
+
