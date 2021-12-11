@@ -42,6 +42,7 @@ export const createCustomer = () => {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
+            "Access-Control-Allow-Headers": "Accept",
         },
         body: JSON.stringify({
             query: `mutation {
@@ -55,7 +56,7 @@ export const createCustomer = () => {
                     }}`,
                 }),
             })
-            .then((res) => res.json())
+    .then((res) => (res))
 } 
 export const getRoutingData = (driverID, pickupDay) => {
 
@@ -66,19 +67,45 @@ export const getRoutingData = (driverID, pickupDay) => {
         },
         body: JSON.stringify({
             query: `{
-                routeRequest (driver: ${driverID}, pickupDay: ${pickupDay})
-                    {
-                        name
-                        streetAddress
-                        city
-                        state
-                        latitude
-                        longitude
-                        disposalTime
+                routeRequest(driver: 4,
+                    pickupDay: "Monday"){
+                      name
+                      streetAddress
+                      city
+                      state
+                      latitude
+                      longitude
+                      disposalTime
                     }
                 
             }`,
                 }),
             })
-            .then((res) => res.json())
+    .then((res) => (res.json()))
+} 
+
+export const markLocationComplete = () => {
+
+    return fetch('https://peaceful-wildwood-61032.herokuapp.com/graphql', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            query: `{
+                routeRequest(driver: 4,
+                    pickupDay: "Monday"){
+                      name
+                      streetAddress
+                      city
+                      state
+                      latitude
+                      longitude
+                      disposalTime
+                    }
+                
+            }`,
+                }),
+            })
+    .then((res) => (console.log("fix the api, this isn't doing anything")))
 } 
