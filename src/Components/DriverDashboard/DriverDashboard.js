@@ -24,7 +24,7 @@ const DriverDashboard = () => {
   useEffect(() => {
     getRoutingData(driverID, selectedDay)
     // .then(data => setRouteLocations(data))
-
+    .then(data => console.log(data))
     .then(data => setRouteLocations(data.data.data.routeRequest))
   }, [selectedDay])
 
