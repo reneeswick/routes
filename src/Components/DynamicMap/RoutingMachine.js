@@ -1,7 +1,5 @@
 import L from 'leaflet';
-import {
-  createControlComponent
-} from "@react-leaflet/core";
+import {createControlComponent} from "@react-leaflet/core";
 import 'leaflet-routing-machine'
 
 const createRoutingMachineLayer = ({locations}) => {
@@ -25,10 +23,16 @@ const createRoutingMachineLayer = ({locations}) => {
     units: 'imperial'
   });
 
+
   return instance;
+
 };
 
+
+
 const RoutingMachine = createControlComponent(createRoutingMachineLayer);
+console.log(RoutingMachine)
+
 
 export default RoutingMachine;
 
