@@ -37,12 +37,16 @@ const FormAddCustomer = () => {
 
 
   return (
-    <div>
-      <form className='add-new-customer-form'>
+    <div className='add-new-customer-form'>
+      <form>
+        <h1 className='subheader'>Add a New Customer</h1>
+        <Link to='/driver'>
+          <button className='secondary-btn return-to-dash'>Return to Driver Dashboard</button>
+        </Link>
         <input
           type='text'
           name='customerName'
-          placeholder='Customer name here'
+          placeholder='Customer Name (First, Last)'
           value={customerName}
           onChange={(e) => setCustomerName(e.target.value)}
         />
@@ -73,9 +77,6 @@ const FormAddCustomer = () => {
         </select>
       </form>
       <button className='btn-stndrd' onClick={()=>{submitNewCustomer()}}>Create New Customer</button>
-      <Link to='/driver'>
-        <button className='secondary-btn'>Return to Driver Dashboard</button>
-      </Link>
     </div>
   )
 }

@@ -42,14 +42,14 @@ const DriverDashboard = () => {
   return (
     <div className="driver-dashboard">
       <Welcome />
+      <Link to='/add-new-customer'>
+        <button className='btn-stndrd add-new-customer'>Add New Customer</button>
+      </Link>
       <Calendar submitDate={submitDate}/>
       <div className="route-container">
         <DynamicMap locations={trialLocations} />
         <RouteCardsContainer locations={trialLocations}/>
       </div>
-      <Link to='/add-new-customer'>
-        <button className='btn-stndrd'>Add New Customer</button>
-      </Link>
     </div>
   )
 
