@@ -76,6 +76,7 @@ export const getRoutingData = (driverID, pickupDay) => {
                       latitude
                       longitude
                       disposalTime
+                      locationId
                     }
 
             }`,

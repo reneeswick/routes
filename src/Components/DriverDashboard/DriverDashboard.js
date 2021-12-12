@@ -33,7 +33,7 @@ const DriverDashboard = () => {
     setRouteLocations((prevState) => {
       const indexOfElement = routeLocations.indexOf(location);
       // swtich location.name to locaion.id
-      return prevState.filter(locations => locations.name !== location.name);
+      return prevState.filter(locations => locations.locationId !== location.locationId);
     })
     //update selected route API data (pickedUP:true)
   }

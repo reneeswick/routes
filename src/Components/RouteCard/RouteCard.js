@@ -2,8 +2,11 @@ import React from 'react';
 import './RouteCard.css';
 
 const RouteCard = ({locations, markCompleted}) => {
+  const filteredLocations = locations.filter((location) => {
+    return location.locationId !== null
+  })
 
-  const cards = locations.map((location, i) => {
+  const cards = filteredLocations.map((location, i) => {
     return (
       <div key={`${i}${Date.now()}`} className='route-card'>
         <div className='company-name'>{location.name}</div>
