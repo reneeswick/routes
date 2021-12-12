@@ -21,7 +21,7 @@
 //                 longitude
 //                 disposalTime
 //             }
-        
+
 //         }`
 
 //     return axios({
@@ -57,7 +57,7 @@ export const createCustomer = () => {
                 }),
             })
     .then((res) => (res))
-} 
+}
 export const getRoutingData = (driverID, pickupDay) => {
 
     return fetch('https://peaceful-wildwood-61032.herokuapp.com/graphql', {
@@ -67,8 +67,8 @@ export const getRoutingData = (driverID, pickupDay) => {
         },
         body: JSON.stringify({
             query: `{
-                routeRequest(driver: 4,
-                    pickupDay: "Monday"){
+                routeRequest(driver: ${driverID},
+                    pickupDay: "${pickupDay}"){
                       name
                       streetAddress
                       city
@@ -77,12 +77,12 @@ export const getRoutingData = (driverID, pickupDay) => {
                       longitude
                       disposalTime
                     }
-                
+
             }`,
                 }),
             })
     .then((res) => (res.json()))
-} 
+}
 
 export const markLocationComplete = () => {
 
@@ -103,9 +103,9 @@ export const markLocationComplete = () => {
                       longitude
                       disposalTime
                     }
-                
+
             }`,
                 }),
             })
     .then((res) => (console.log("fix the api, this isn't doing anything")))
-} 
+}
