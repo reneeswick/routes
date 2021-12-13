@@ -7,7 +7,7 @@ const LandingPage = () => {
     return (
         <div className="landing-main">
             <div className="background">
-                <img src={landingmain}></img>
+                <img src={landingmain} alt="landing backdrop truck"></img>
             </div>
             <Fade big left>
                 <div className="landing-main-info-container">

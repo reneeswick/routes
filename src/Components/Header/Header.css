@@ -5,6 +5,7 @@
     width:100%;
     display: flex;
     justify-content: center;
+    background-color:white;
 
 
 
@@ -16,6 +17,7 @@
   body {
     margin: 0px;
     font-family: 'segoe ui';
+    background-color:white;
   }
 
   .nav {

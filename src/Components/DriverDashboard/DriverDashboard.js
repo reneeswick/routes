@@ -5,47 +5,42 @@ import Welcome from "../Welcome/Welcome";
 import RouteCardsContainer from "../RouteCardsContainer/RouteCardsContainer";
 import Calendar from "../Calendar/Calendar";
 import "./DriverDashboard.css";
-import {getRoutingData, markLocationComplete} from "./../../util/api"
+import {getRoutingData, patchLocationComplete} from "./../../util/api"
 
-let driverID = 4;
+
 
 const DriverDashboard = () => {
   /////////Test Data///////////
-  const trialLocations = [
-      {name:"Company Name1", disposalTime: 10, latitude:32.7641, longitude:-117.152680, city: "San Diego", state: "California", streetAddress: "123 America Way"},
-      {name:"Company Name2", disposalTime: 15, latitude:32.886520, longitude:-117.2263, city: "San Diego", state: "California", streetAddress: "123 America Way"},
-      {name:"Company Name3", disposalTime: 25, latitude:35.6570351, longitude:-105.0962085, city: "San Diego", state: "California", streetAddress: "123 America Way"},
-      {name:"Company Name4", disposalTime: 10, latitude:36.6570351, longitude:-106.0962085, city: "San Diego", state: "California", streetAddress: "123 America Way"},
-      {name:"Company Name5", disposalTime: 30, latitude:37.6570351, longitude:-107.0962085, city: "San Diego", state: "California", streetAddress: "123 America Way"},
-  ]
+  // const trialLocations = [
+  //     {name:"Company Name1", disposalTime: 10, latitude:32.7641, longitude:-117.152680, city: "San Diego", state: "California", streetAddress: "123 America Way"},
+  //     {name:"Company Name2", disposalTime: 15, latitude:32.886520, longitude:-117.2263, city: "San Diego", state: "California", streetAddress: "123 America Way"},
+  //     {name:"Company Name3", disposalTime: 25, latitude:35.6570351, longitude:-105.0962085, city: "San Diego", state: "California", streetAddress: "123 America Way"},
+  //     {name:"Company Name4", disposalTime: 10, latitude:36.6570351, longitude:-106.0962085, city: "San Diego", state: "California", streetAddress: "123 America Way"},
+  //     {name:"Company Name5", disposalTime: 30, latitude:37.6570351, longitude:-107.0962085, city: "San Diego", state: "California", streetAddress: "123 America Way"},
+  // ]
 ////////////////////////////////
-  const [selectedDay, setSelectedDay] = useState("")
+  const [selectedDay, setSelectedDay] = useState("Monday")
   const [routeLocations, setRouteLocations] = useState([])
+  const [driverID, setDriverID] = useState(4)
 
   useEffect(() => {
     getRoutingData(driverID, selectedDay)
-    // .then(data => setRouteLocations(data))
     .then(data => setRouteLocations(data.data.routeRequest))
-  }, [])
+  }, [selectedDay])
 
-  const makeAPICall = () => {
-  }
 
-  //I changed updatedState to mutatedState for my own sake
   const markCompleted = (location) => {
-    //remove selected route location from state 
     setRouteLocations((prevState) => {
-      console.log(location);
-      const indexOfElement = routeLocations.indexOf(location);
-      // prevState.splice(indexOfElement, 1);
-      // swtich location.name to locaion.id
-      return prevState.filter(locations => locations.name !== location.name);
-      // return prevState;
+      return prevState.filter(locations => locations.locationId !== location.locationId);
     })
-    //update selected route API data (pickedUP:true)
+    patchLocationComplete(location.locationId)
+    .then(data => console.log(data))
+
   }
+
 
   const submitDate = (date) => {
+    setRouteLocations([])
     let officialDate = new Date(date)
     let dayIndex = officialDate.getDay()
 
@@ -66,6 +61,7 @@ const DriverDashboard = () => {
     }
   }
 
+
   return (
     <div className="driver-dashboard">
       <Welcome />
@@ -74,7 +70,7 @@ const DriverDashboard = () => {
       </Link>
       <Calendar submitDate={submitDate}/>
       <div className="route-container">
-        <DynamicMap locations={routeLocations}/>
+        <DynamicMap key={Date.now()} locations={routeLocations}/>
         <RouteCardsContainer  key={routeLocations.length} markCompleted = {markCompleted} locations={routeLocations}/>
       </div>
     </div>

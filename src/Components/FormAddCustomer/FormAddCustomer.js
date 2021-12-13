@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './FormAddCustomer.css';
+import {createCustomer, editCustomerData } from './../../util/api'
 
 const FormAddCustomer = () => {
   const [customerName, setCustomerName] = useState('');
@@ -8,31 +9,17 @@ const FormAddCustomer = () => {
   const [city, setCity] = useState('');
   const [state, setState] = useState('')
   const [pickupDay, setPickupDay] = useState('');
+  const [bins, setBins] = useState('')
 
   /*DriverID is defaulted to 1 -- needs to be dynamically passed as a prop*/
-  let driverID = 1
+  let driverId = 4
 
-  const createNewCustomer = (driverID) => {
-    let newCustomer = {
-      name: customerName,
-      driver_id: driverID
-    }
-  }
 
-  const createNewLocation = (customerID) => {
-    let newLocation = {
-      customer_id: customerID,
-      streetAdress: street,
-      city: city,
-      state: state,
-      pickupDay: pickupDay
-    }
-  }
-
-  const submitNewCustomer = () => {
-    createNewCustomer(driverID)
-    //let customerID = fetch customerID //
-    createNewLocation(/*customerID*/)
+  const submitNewCustomer = async () => {
+    let customerIDResponse = await createCustomer(driverId, customerName);
+    console.log(customerIDResponse)
+    let data =  customerIDResponse.data.createCustomer
+    editCustomerData(data.id, street, city, state, pickupDay, bins)//number of bins is last arg
   }
 
 
@@ -74,6 +61,18 @@ const FormAddCustomer = () => {
           <option value='Thursday'>Thursday</option>
           <option value='Friday'>Friday</option>
           <option value='Saturday'>Saturday</option>
+        </select>
+        <select name='bins' onChange={(e)=> setBins(e.target.value)}>
+          <option value='0' selected disabled hidden>Select Container Amt.</option>
+          <option value='1'>1</option>
+          <option value='2'>2</option>
+          <option value='3'>3</option>
+          <option value='4'>4</option>
+          <option value='5'>5</option>
+          <option value='6'>6</option>
+          <option value='7'>7</option>
+          <option value='8'>8</option>
+          <option value='9'>9</option>
         </select>
       </form>
       <button className='btn-stndrd' onClick={()=>{submitNewCustomer()}}>Create New Customer</button>

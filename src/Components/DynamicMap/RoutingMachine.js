@@ -2,10 +2,12 @@ import L from 'leaflet';
 import {createControlComponent} from "@react-leaflet/core";
 import 'leaflet-routing-machine'
 
-const createRoutingMachineLayer = ({locations}) => {
+const createRoutingMachineLayer = ({ locations }) => {
+  // console.log('locations in routing machine: ', locations)
   const leafletLocations = locations.map(location => {
     return L.latLng(location.latitude, location.longitude);
   });
+  // console.log('leafletLocations: ', leafletLocations)
   const instance = L.Routing.control({
     waypoints: leafletLocations,
     lineOptions: {
@@ -23,7 +25,7 @@ const createRoutingMachineLayer = ({locations}) => {
     units: 'imperial'
   });
 
-
+  console.log('instance: ', instance)
   return instance;
 
 };
