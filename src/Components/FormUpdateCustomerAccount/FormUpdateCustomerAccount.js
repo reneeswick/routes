@@ -12,7 +12,7 @@ const FormUpdateCustomerAccount = () => {
 
   /*customerID is defaulted to 1 -- needs to be dynamically passed as a prop*/
   const customerId = 7
-  let locationID = 13
+  let locationID = 14
 
   const submitCustomerUpdates = () => {
     updateCustomerAccount(locationID, pickupDay, bins)
