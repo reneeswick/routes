@@ -7,7 +7,7 @@ import Calendar from "../Calendar/Calendar";
 import "./DriverDashboard.css";
 import {getRoutingData, patchLocationComplete} from "./../../util/api"
 
-let driverID = 4;
+
 
 const DriverDashboard = () => {
   /////////Test Data///////////
@@ -31,8 +31,6 @@ const DriverDashboard = () => {
 
   const markCompleted = (location) => {
     setRouteLocations((prevState) => {
-      const indexOfElement = routeLocations.indexOf(location);
-      // swtich location.name to locaion.id
       return prevState.filter(locations => locations.locationId !== location.locationId);
     })
     patchLocationComplete(location.locationId)
@@ -62,6 +60,7 @@ const DriverDashboard = () => {
       setSelectedDay("Sunday")
     }
   }
+
 
   return (
     <div className="driver-dashboard">
