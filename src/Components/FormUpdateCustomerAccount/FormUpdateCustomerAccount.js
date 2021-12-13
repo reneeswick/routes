@@ -19,15 +19,15 @@ const FormUpdateCustomerAccount = () => {
   }
 
   return (
-    <div>
+    <>
       <h1 className='subheader'>Update Customer Account</h1>
       <Link to='/customer'>
         <button className='secondary-btn return-to-dash'>Return to Customer Dashboard</button>
       </Link>
       <form className='update-customer-info-form'>
         <label>Select a New Pickup Day</label>
-        <select name='day' onChange={(e) => setPickupDay(e.target.value)}>
-          <option value='none' selected disabled hidden>Day</option>
+        <select name='customerDay' onChange={(e) => setPickupDay(e.target.value)}>
+          <option value='none'  disabled hidden>Day</option>
           <option value='Sunday'>Sunday</option>
           <option value='Monday'>Monday</option>
           <option value='Tuesday'>Tuesday</option>
@@ -37,8 +37,8 @@ const FormUpdateCustomerAccount = () => {
           <option value='Saturday'>Saturday</option>
         </select>
         <label>Select New Amount of Bins</label>
-        <select name='bins' onChange={(e)=> setBins(e.target.value)}>
-          <option value='0' selected disabled hidden>Number</option>
+        <select name='customerBins' onChange={(e)=> setBins(e.target.value)}>
+          <option value='0' defaultValue disabled hidden>Number</option>
           <option value='1'>1</option>
           <option value='2'>2</option>
           <option value='3'>3</option>
@@ -50,8 +50,8 @@ const FormUpdateCustomerAccount = () => {
           <option value='9'>9</option>
         </select>
       </form>
-      <button className='btn-stndrd' onClick={() => submitCustomerUpdates()}>Submit Updates</button>
-    </div>
+      <button className='btn-stndrd customer-form-btn' onClick={() => submitCustomerUpdates()}>Submit Updates</button>
+    </>
   )
 }
 
