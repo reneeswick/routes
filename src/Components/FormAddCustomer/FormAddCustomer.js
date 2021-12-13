@@ -7,6 +7,7 @@ import {renderPopup} from './../../util/dom-helper'
 const FormAddCustomer = () => {
   const [customerName, setCustomerName] = useState('');
   const [street, setStreet] = useState('');
+  const [street2, setStreet2] = useState('');
   const [city, setCity] = useState('');
   const [state, setState] = useState('')
   const [pickupDay, setPickupDay] = useState('');
@@ -25,7 +26,7 @@ const FormAddCustomer = () => {
     }
     let data =  customerIDResponse.data.createCustomer
 
-    editCustomerData(data.id, street, city, state, pickupDay, bins)//number of bins is last arg
+    editCustomerData(data.id, street, street2, city, state, pickupDay, bins)//number of bins is last arg
   }
 
 
@@ -46,9 +47,16 @@ const FormAddCustomer = () => {
         <input
           type='text'
           name='street'
-          placeholder='Street Address'
+          placeholder='Address 1'
           value={street}
           onChange={(e) => setStreet(e.target.value)}
+        />
+        <input
+          type='text'
+          name='street2'
+          placeholder='Address 2'
+          value={street2}
+          onChange={(e) => setStreet2(e.target.value)}
         />
         <select name='city' onChange={(e) => setCity(e.target.value)}>
           <option value='none' selected disabled hidden>Select a City</option>
