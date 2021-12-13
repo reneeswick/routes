@@ -6,7 +6,8 @@
 }
 
 input[name=customerName],
-input[name=street]{
+input[name=street],
+input[name=street2]{
   width: 100%;
   padding: .75rem .5rem;
   margin: .25rem 0;
@@ -16,9 +17,6 @@ input[name=street]{
   outline: none;
 }
 
-input[name=street] {
-  width: 50%;
-}
 
 input[type=text]:focus {
   border: 3px solid rgba(73, 209, 219, 0.199);
