@@ -35,10 +35,14 @@ const DriverDashboard = () => {
       // swtich location.name to locaion.id
       return prevState.filter(locations => locations.locationId !== location.locationId);
     })
-    //update selected route API data (pickedUP:true)
+    markLocationComplete(location.id)
+    .then(data => console.log(data))
+
   }
 
+
   const submitDate = (date) => {
+    setRouteLocations([])
     let officialDate = new Date(date)
     let dayIndex = officialDate.getDay()
 

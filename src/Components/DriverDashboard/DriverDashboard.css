@@ -1,3 +1,6 @@
+.driver-dashboard{
+  max-width: 1400px;
+}
 .route-container {
   display: grid;
   grid-template-columns: 4fr 1fr;
