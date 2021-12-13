@@ -1,5 +1,6 @@
 // const axios = require('axios');
 
+
 // export const getRoutingData = (driverID, day) => { // const graphqlQuery = {
 //     //     "operationName": "routeRequest",
 //     //     "query": `query routeRequest(driver: 1, pickupDay: "Monday") { name  }`,
@@ -36,29 +37,17 @@
 //     })
 // }
 
-export const createCustomer = () => {
+export const createCustomer = (driverId, name) => {
 
-    return fetch('https://peaceful-wildwood-61032.herokuapp.com/graphql', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            "Access-Control-Allow-Headers": "Accept",
-        },
-        body: JSON.stringify({
-            query: `mutation {
-                createCustomer(
-                    name: "Bob Johnson",
-                    driverId: 1
-                    ) {
-                        id
-                        name
-                        driverId
-                    }}`,
-                }),
-            })
-    .then((res) => (res))
-}
-export const getRoutingData = (driverID, pickupDay) => {
+    const query = `mutation {
+        createCustomer(
+            name: "${name}",
+            driverId: ${driverId}
+            ) {
+                id
+                name
+                driverId
+            }}`
 
     return fetch('https://peaceful-wildwood-61032.herokuapp.com/graphql', {
         method: 'POST',
@@ -66,47 +55,93 @@ export const getRoutingData = (driverID, pickupDay) => {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            query: `{
-                routeRequest(driver: ${driverID},
-                    pickupDay: "${pickupDay}"){
-                      name
-                      streetAddress
-                      city
-                      state
-                      latitude
-                      longitude
-                      disposalTime
-                      locationId
-                    }
-
-            }`,
+            query: query,
                 }),
-            })
+    })
     .then((res) => (res.json()))
+    .then((data)=> {console.log(data); return data})
 }
 
-export const markLocationComplete = () => {
+export const editCustomerData = (customerId, streetAddress, city, state, pickupDay, numberOfBins=3) => {
 
+    const query = `
+        mutation { createLocation (
+            streetAddress: "${streetAddress}",
+            city: "${city}",
+            state: "${state}",
+            pickupDay: "${pickupDay}",
+            numberOfBins: ${numberOfBins},
+            pickedUp: false,
+            customerId: ${customerId}
+        ) {
+            id
+            streetAddress
+            city
+            state
+            pickupDay
+            numberOfBins
+            pickedUp
+        }}
+    `
+    return fetch('https://peaceful-wildwood-61032.herokuapp.com/graphql', {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            query: query,
+        }),
+    })
+    .then((res) => (res.json()))
+    .then((data)=> {console.log(data); return data})
+}
+
+export const getRoutingData = (driverID, pickupDay) => {
+    const query = `{
+        routeRequest(driver: ${driverID},
+            pickupDay: "${pickupDay}"){
+              name
+              streetAddress
+              city
+              state
+              latitude
+              longitude
+              disposalTime
+              locationId
+              customerId
+            }
+    }`
     return fetch('https://peaceful-wildwood-61032.herokuapp.com/graphql', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            query: `{
-                routeRequest(driver: 4,
-                    pickupDay: "Monday"){
-                      name
-                      streetAddress
-                      city
-                      state
-                      latitude
-                      longitude
-                      disposalTime
-                    }
+            query: query,
+        }),
+    })
+    .then((res) => (res.json()))
+    .then((data)=> {console.log(data); return data})
+}
 
-            }`,
-                }),
-            })
-    .then((res) => (console.log("fix the api, this isn't doing anything")))
+export const markLocationComplete = (locationID, boolean = true) => {
+    const query = `mutation {
+        updateLocation(
+            id: ${locationID},
+            pickedUp: ${boolean}
+        ) {
+            id
+            pickedUp
+        }`
+    return fetch('https://peaceful-wildwood-61032.herokuapp.com/graphql', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            query: query,
+        }),
+    })
+    .then((res) => (res.json()))
+    .then((data)=> {console.log(data); return data})
 }
