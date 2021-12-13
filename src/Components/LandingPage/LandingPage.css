@@ -22,7 +22,7 @@
     min-width: none;
     max-width: 40em;
     padding: 10px;
-    margin-top: calc(30vh - 100px);
+    margin: calc(30vh - 100px) auto;
     backdrop-filter: blur(10px);
     background-color:rgba(223, 223, 223, 0.5);
     border-radius: 50px;
