@@ -4,6 +4,12 @@ import './Header.css'
 import logo from './logoroutes.png'
 
 const Header = () => {
+
+    const navClick = () => {
+        document.querySelector('#nav-check').checked = false;
+        console.log("hrello")
+    }
+
     return (
         <div className="header">
             <div className="nav">
@@ -19,9 +25,9 @@ const Header = () => {
                     </label>
                 </div>
                 <div className="nav-links">
-                    <NavLink to="/home">Home</NavLink>
-                    <NavLink to="/driver">Driver</NavLink>
-                    <NavLink to="/customer">Customer</NavLink>
+                    <NavLink onClick={() => navClick()} to="/home">Home</NavLink>
+                    <NavLink onClick={() => navClick()} to="/driver">Driver</NavLink>
+                    <NavLink onClick={() => navClick()} to="/customer">Customer</NavLink>
                 </div>
             </div>
         </div>
