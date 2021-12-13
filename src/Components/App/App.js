@@ -10,6 +10,7 @@ import FormUpdateCustomerAccount from '../FormUpdateCustomerAccount/FormUpdateCu
 
 const App = () => {
 
+
   return (
     <main >
       <Header />
@@ -19,6 +20,8 @@ const App = () => {
         <Route exact path = '/customer' render = {() => <CustomerDashboard />} />
         <Route exact path = '/add-new-customer' render = {() => <FormAddCustomer />} />
         <Route exact path = '/update-customer-account' render = {() => <FormUpdateCustomerAccount />} />
+      </div>
+      <div className="popup-container hidden">
       </div>
     </main>
   )
