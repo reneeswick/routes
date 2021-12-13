@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { editCustomerData } from './../../util/api';
+import { updateCustomerAccount } from './../../util/api';
 
 const FormUpdateCustomerAccount = () => {
   const [street, setStreet] = useState('');
@@ -11,35 +11,22 @@ const FormUpdateCustomerAccount = () => {
 
   /*customerID is defaulted to 1 -- needs to be dynamically passed as a prop*/
   const customerId = 7
+  let locationID = 13
 
   const submitCustomerUpdates = () => {
-    editCustomerData(customerId, street, city, state, pickupDay, bins)
+    updateCustomerAccount(locationID, pickupDay, bins)
   }
 
   return (
-    <div className='add-new-customer-form'>
+    <div>
       <h1 className='subheader'>Update Customer Account</h1>
       <Link to='/customer'>
         <button className='secondary-btn return-to-dash'>Return to Customer Dashboard</button>
       </Link>
       <form>
-        <input
-          type='text'
-          name='street'
-          placeholder='Street Address'
-          value={street}
-          onChange={(e) => setStreet(e.target.value)}
-        />
-        <select name='city' onChange={(e) => setCity(e.target.value)}>
-          <option value='none' selected disabled hidden>Select a City</option>
-          <option value='San Diego'>San Diego</option>
-        </select>
-        <select name='state' onChange={(e) => setState(e.target.value)}>
-          <option value='none' selected disabled hidden>Select a State</option>
-          <option value='CA'>CA</option>
-        </select>
+        <label>Select a New Pickup Day</label>
         <select name='day' onChange={(e) => setPickupDay(e.target.value)}>
-          <option value='none' selected disabled hidden>Select a Pick-Up Day</option>
+          <option value='none' selected disabled hidden>Select a Pickup Day</option>
           <option value='Sunday'>Sunday</option>
           <option value='Monday'>Monday</option>
           <option value='Tuesday'>Tuesday</option>
@@ -48,6 +35,7 @@ const FormUpdateCustomerAccount = () => {
           <option value='Friday'>Friday</option>
           <option value='Saturday'>Saturday</option>
         </select>
+        <label>Select amount of Bins for Service</label>
         <select name='bins' onChange={(e)=> setBins(e.target.value)}>
           <option value='0' selected disabled hidden>Select Container Amt.</option>
           <option value='1'>1</option>
