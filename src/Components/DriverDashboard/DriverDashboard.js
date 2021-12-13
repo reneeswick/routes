@@ -3,6 +3,7 @@ import {Link} from "react-router-dom"
 import DynamicMap from "../DynamicMap/DynamicMap";
 import Welcome from "../Welcome/Welcome";
 import RouteCardsContainer from "../RouteCardsContainer/RouteCardsContainer";
+import LoadingCover from "../LoadingCover/LoadingCover";
 import Calendar from "../Calendar/Calendar";
 import "./DriverDashboard.css";
 import {getRoutingData, patchLocationComplete} from "./../../util/api"
@@ -64,6 +65,7 @@ const DriverDashboard = () => {
 
   return (
     <div className="driver-dashboard">
+      {routeLocations.length<1 && <LoadingCover/>}
       <Welcome />
       <Link to='/add-new-customer'>
         <button className='btn-stndrd add-new-customer'>Add New Customer</button>
