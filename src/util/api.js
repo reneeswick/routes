@@ -125,7 +125,7 @@ export const getRoutingData = (driverID, pickupDay) => {
 }
 
 export const patchLocationComplete = (locationID, boolean = true) => {
-    
+
     const query = `
         mutation { updateLocation(
             id: ${locationID},
@@ -133,6 +133,33 @@ export const patchLocationComplete = (locationID, boolean = true) => {
         ) {
             id
             pickedUp
+        }}`
+
+        console.log(query)
+    return fetch('https://peaceful-wildwood-61032.herokuapp.com/graphql', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            query: query,
+        }),
+    })
+    .then((res) => (res.json()))
+    .then((data)=> {console.log(data); return data})
+}
+
+export const updateCustomerAccount = (locationID, day, bins) => {
+
+    const query = `
+        mutation { updateLocation(
+            id: ${locationID},
+            pickupDay: "${day}",
+            numberOfBins: ${bins}
+        ) {
+            id
+            pickupDay
+            numberOfBins
         }}`
 
         console.log(query)

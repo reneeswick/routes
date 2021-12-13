@@ -13,8 +13,8 @@ const FormAddCustomer = () => {
   const [bins, setBins] = useState('')
   const [error, setError] = useState(null)
 
-  /*DriverID is defaulted to 1 -- needs to be dynamically passed as a prop*/
-  let driverId = 4
+  /*DriverID is defaulted to 4 -- needs to be dynamically passed as a prop*/
+  const driverId = 4
 
 
   const submitNewCustomer = async () => {
