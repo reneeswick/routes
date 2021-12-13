@@ -25,7 +25,8 @@ input[type=text]:focus {
 
 select[name=city],
 select[name=state],
-select[name=day] {
+select[name=day],
+select[name=bins] {
   width: 25%;
   padding: .75rem .5rem;
   margin: .25rem 0;
