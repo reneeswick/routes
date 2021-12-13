@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './FormAddCustomer.css';
 import {createCustomer, editCustomerData } from './../../util/api'
+import {renderPopup} from './../../util/dom-helper'
 
 const FormAddCustomer = () => {
   const [customerName, setCustomerName] = useState('');
@@ -10,6 +11,7 @@ const FormAddCustomer = () => {
   const [state, setState] = useState('')
   const [pickupDay, setPickupDay] = useState('');
   const [bins, setBins] = useState('')
+  const [error, setError] = useState(null)
 
   /*DriverID is defaulted to 1 -- needs to be dynamically passed as a prop*/
   let driverId = 4
@@ -18,7 +20,11 @@ const FormAddCustomer = () => {
   const submitNewCustomer = async () => {
     let customerIDResponse = await createCustomer(driverId, customerName);
     console.log(customerIDResponse)
+    if(customerIDResponse.error){
+      setError(customerIDResponse.error)
+    }
     let data =  customerIDResponse.data.createCustomer
+
     editCustomerData(data.id, street, city, state, pickupDay, bins)//number of bins is last arg
   }
 
@@ -75,7 +81,7 @@ const FormAddCustomer = () => {
           <option value='9'>9</option>
         </select>
       </form>
-      <button className='btn-stndrd' onClick={()=>{submitNewCustomer()}}>Create New Customer</button>
+      <button className='btn-stndrd' onClick={()=>{submitNewCustomer(); renderPopup(`${customerName} has been added to the database`, 3500, "blue", "driver")}}>Create New Customer</button>
     </div>
   )
 }

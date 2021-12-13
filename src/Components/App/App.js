@@ -9,6 +9,7 @@ import FormAddCustomer from '../FormAddCustomer/FormAddCustomer';
 
 const App = () => {
 
+
   return (
     <main >
       <Header />
@@ -17,6 +18,8 @@ const App = () => {
         <Route exact path = '/driver' render = {() => <DriverDashboard />} />
         <Route exact path = '/customer' render = {() => <CustomerDashboard />} />
         <Route exact path = '/add-new-customer' render = {() => <FormAddCustomer />} />
+      </div>
+      <div className="popup-container hidden">
       </div>
     </main>
   )
