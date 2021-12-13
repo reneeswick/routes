@@ -69,7 +69,7 @@ export const editCustomerData = (customerId, streetAddress, streetAddress2, city
     const query = `
         mutation { createLocation (
             streetAddress: "${streetAddress}",
-            building: "${streetAddress2}",
+            buildingNumber: "${streetAddress2}",
             city: "${city}",
             state: "${state}",
             pickupDay: "${pickupDay}",
@@ -79,6 +79,7 @@ export const editCustomerData = (customerId, streetAddress, streetAddress2, city
         ) {
             id
             streetAddress
+            buildingNumber
             city
             state
             pickupDay
