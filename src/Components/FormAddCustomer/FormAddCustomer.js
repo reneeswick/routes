@@ -11,8 +11,8 @@ const FormAddCustomer = () => {
   const [pickupDay, setPickupDay] = useState('');
   const [bins, setBins] = useState('')
 
-  /*DriverID is defaulted to 1 -- needs to be dynamically passed as a prop*/
-  let driverId = 4
+  /*DriverID is defaulted to 4 -- needs to be dynamically passed as a prop*/
+  const driverId = 4
 
 
   const submitNewCustomer = async () => {
