@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { updateCustomerAccount } from './../../util/api';
+import './FormUpdateCustomerAccount.css';
 
 const FormUpdateCustomerAccount = () => {
   const [street, setStreet] = useState('');
@@ -23,10 +24,10 @@ const FormUpdateCustomerAccount = () => {
       <Link to='/customer'>
         <button className='secondary-btn return-to-dash'>Return to Customer Dashboard</button>
       </Link>
-      <form>
+      <form className='update-customer-info-form'>
         <label>Select a New Pickup Day</label>
         <select name='day' onChange={(e) => setPickupDay(e.target.value)}>
-          <option value='none' selected disabled hidden>Select a Pickup Day</option>
+          <option value='none' selected disabled hidden>Day</option>
           <option value='Sunday'>Sunday</option>
           <option value='Monday'>Monday</option>
           <option value='Tuesday'>Tuesday</option>
@@ -35,9 +36,9 @@ const FormUpdateCustomerAccount = () => {
           <option value='Friday'>Friday</option>
           <option value='Saturday'>Saturday</option>
         </select>
-        <label>Select amount of Bins for Service</label>
+        <label>Select New Amount of Bins</label>
         <select name='bins' onChange={(e)=> setBins(e.target.value)}>
-          <option value='0' selected disabled hidden>Select Container Amt.</option>
+          <option value='0' selected disabled hidden>Number</option>
           <option value='1'>1</option>
           <option value='2'>2</option>
           <option value='3'>3</option>
