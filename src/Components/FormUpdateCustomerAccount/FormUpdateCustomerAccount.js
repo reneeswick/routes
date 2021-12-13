@@ -1,42 +1,28 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './FormAddCustomer.css';
-import {createCustomer, editCustomerData } from './../../util/api'
+import { editCustomerData } from './../../util/api';
 
-const FormAddCustomer = () => {
-  const [customerName, setCustomerName] = useState('');
+const FormUpdateCustomerAccount = () => {
   const [street, setStreet] = useState('');
   const [city, setCity] = useState('');
-  const [state, setState] = useState('')
+  const [state, setState] = useState('');
   const [pickupDay, setPickupDay] = useState('');
-  const [bins, setBins] = useState('')
+  const [bins, setBins] = useState(0);
 
-  /*DriverID is defaulted to 4 -- needs to be dynamically passed as a prop*/
-  const driverId = 4
+  /*customerID is defaulted to 1 -- needs to be dynamically passed as a prop*/
+  const customerId = 7
 
-
-  const submitNewCustomer = async () => {
-    let customerIDResponse = await createCustomer(driverId, customerName);
-    console.log(customerIDResponse)
-    let data =  customerIDResponse.data.createCustomer
-    editCustomerData(data.id, street, city, state, pickupDay, bins)//number of bins is last arg
+  const submitCustomerUpdates = () => {
+    editCustomerData(customerId, street, city, state, pickupDay, bins)
   }
-
 
   return (
     <div className='add-new-customer-form'>
+      <h1 className='subheader'>Update Customer Account</h1>
+      <Link to='/customer'>
+        <button className='secondary-btn return-to-dash'>Return to Customer Dashboard</button>
+      </Link>
       <form>
-        <h1 className='subheader'>Add a New Customer</h1>
-        <Link to='/driver'>
-          <button className='secondary-btn return-to-dash'>Return to Driver Dashboard</button>
-        </Link>
-        <input
-          type='text'
-          name='customerName'
-          placeholder='Customer Name (First, Last)'
-          value={customerName}
-          onChange={(e) => setCustomerName(e.target.value)}
-        />
         <input
           type='text'
           name='street'
@@ -75,9 +61,9 @@ const FormAddCustomer = () => {
           <option value='9'>9</option>
         </select>
       </form>
-      <button className='btn-stndrd' onClick={()=>{submitNewCustomer()}}>Create New Customer</button>
+      <button className='btn-stndrd' onClick={() => submitCustomerUpdates()}>Submit Updates</button>
     </div>
   )
 }
 
-export default FormAddCustomer;
+export default FormUpdateCustomerAccount;

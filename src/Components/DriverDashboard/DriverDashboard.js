@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import {Link} from "react-router-dom"
+import {Link} from "react-router-dom";
 import DynamicMap from "../DynamicMap/DynamicMap";
 import Welcome from "../Welcome/Welcome";
 import RouteCardsContainer from "../RouteCardsContainer/RouteCardsContainer";
