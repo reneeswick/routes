@@ -62,11 +62,14 @@ export const createCustomer = (driverId, name) => {
     .then((data)=> {console.log(data); return data})
 }
 
-export const editCustomerData = (customerId, streetAddress, city, state, pickupDay, numberOfBins=3) => {
+export const editCustomerData = (customerId, streetAddress, streetAddress2, city, state, pickupDay, numberOfBins=3) => {
 
+
+    //VV NOT SURE BUILDING IS THE RIGHT QUERY VALUE
     const query = `
         mutation { createLocation (
             streetAddress: "${streetAddress}",
+            building: "${streetAddress2}",
             city: "${city}",
             state: "${state}",
             pickupDay: "${pickupDay}",
