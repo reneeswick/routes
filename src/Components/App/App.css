@@ -9,9 +9,10 @@ main {
 
 .content-container{
   padding: 0px 20px;
-  overflow: visible;
+  overflow: auto;
   display: flex;
-  max-width: 1150px; /*Causing some styling issues on other pages*/
+  flex-wrap: wrap;
+  max-width: 1400px; /*Causing some styling issues on other pages*/
   margin: auto;
 }
 
