@@ -7,7 +7,6 @@ const Header = () => {
 
     const navClick = () => {
         document.querySelector('#nav-check').checked = false;
-        console.log("hrello")
     }
 
     return (
