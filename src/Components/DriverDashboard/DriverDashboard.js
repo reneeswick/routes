@@ -5,7 +5,7 @@ import Welcome from "../Welcome/Welcome";
 import RouteCardsContainer from "../RouteCardsContainer/RouteCardsContainer";
 import Calendar from "../Calendar/Calendar";
 import "./DriverDashboard.css";
-import {getRoutingData, markLocationComplete} from "./../../util/api"
+import {getRoutingData, patchLocationComplete} from "./../../util/api"
 
 let driverID = 4;
 
@@ -35,7 +35,7 @@ const DriverDashboard = () => {
       // swtich location.name to locaion.id
       return prevState.filter(locations => locations.locationId !== location.locationId);
     })
-    markLocationComplete(location.id)
+    patchLocationComplete(location.locationId)
     .then(data => console.log(data))
 
   }
