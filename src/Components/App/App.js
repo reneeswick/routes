@@ -16,8 +16,20 @@ const App = () => {
       <Header />
       <div className="content-container">
         <Route exact path = {['/home', '/']} render = {() => <LandingPage />} />
-        <Route exact path = '/driver' render = {() => <DriverDashboard />} />
-        <Route exact path = '/customer' render = {() => <CustomerDashboard />} />
+        <Route exact path = '/driver' render = {() => <DriverDashboard id={null}/>} />
+        <Route exact path = '/customer' render = {() => <CustomerDashboard id={null}/>} />
+        <Route
+          exact path="/customer/:id"
+          render={({match}) => {
+            return <CustomerDashboard id={parseInt(match.params.id)} />
+          }}
+        />
+        <Route
+          exact path="/driver/:id"
+          render={({match}) => {
+            return <DriverDashboard id={parseInt(match.params.id)} />
+          }}
+        />
         <Route exact path = '/add-new-customer' render = {() => <FormAddCustomer />} />
         <Route exact path = '/update-customer-account' render = {() => <FormUpdateCustomerAccount />} />
       </div>

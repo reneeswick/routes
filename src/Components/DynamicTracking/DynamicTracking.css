@@ -8,4 +8,8 @@
   border-radius: 50px;
   border: 2px solid rgba(73, 209, 219, 0.199);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
 }

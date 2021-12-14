@@ -1,10 +1,10 @@
 import React from 'react';
 import './Welcome.css';
 
-const Welcome = () => {
+const Welcome = ({type = "Driver"}) => {
 
   return (
-    <h1 className="subheader">Welcome User</h1>
+    <h1 className="subheader">Welcome {type}</h1>
   )
 }
 
