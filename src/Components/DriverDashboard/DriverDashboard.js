@@ -10,7 +10,7 @@ import {getRoutingData, patchLocationComplete} from "./../../util/api"
 
 
 
-const DriverDashboard = () => {
+const DriverDashboard = ({id}) => {
   /////////Test Data///////////
   // const trialLocations = [
   //     {name:"Company Name1", disposalTime: 10, latitude:32.7641, longitude:-117.152680, city: "San Diego", state: "California", streetAddress: "123 America Way"},
@@ -20,9 +20,12 @@ const DriverDashboard = () => {
   //     {name:"Company Name5", disposalTime: 30, latitude:37.6570351, longitude:-107.0962085, city: "San Diego", state: "California", streetAddress: "123 America Way"},
   // ]
 ////////////////////////////////
+  if(id===null){id=17}
+  
   const [selectedDay, setSelectedDay] = useState("Monday")
   const [routeLocations, setRouteLocations] = useState([])
-  const [driverID, setDriverID] = useState(15)
+
+  const [driverID, setDriverID] = useState(id)
 
   useEffect(() => {
     getRoutingData(driverID, selectedDay)
