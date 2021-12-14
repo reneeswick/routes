@@ -40,6 +40,10 @@ describe('Driver flow', () => {
     cy.get('.calendar').should('be.visible')
     cy.get('input[name="date"]').type('2021-12-14')
     cy.get('.btn-stndrd').contains('Generate').click()
-    cy.get('.route-card').should('be.visible')
+  });
+
+  it('Should be able to add a new customer', () => {
+    cy.get('.add-new-customer').click()
+    cy.url().should('include', '/add-new-customer')
   });
 });
