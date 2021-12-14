@@ -22,7 +22,8 @@ const DriverDashboard = () => {
 ////////////////////////////////
   const [selectedDay, setSelectedDay] = useState("Monday")
   const [routeLocations, setRouteLocations] = useState([])
-  const [driverID, setDriverID] = useState(7)
+  const [driverID, setDriverID] = useState(17)
+  console.log(routeLocations)
 
   useEffect(() => {
     getRoutingData(driverID, selectedDay)
