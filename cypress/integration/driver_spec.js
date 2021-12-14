@@ -38,8 +38,6 @@ describe('Driver flow', () => {
   it('Should display a calendar that a driver can manipulate to generate new routes for different days', () => {
     cy.get('.calendar-prompt').should('contain', 'Select')
     cy.get('.calendar').should('be.visible')
-    cy.get('input[name="date"]').type('2021-12-14')
-    cy.get('.btn-stndrd').contains('Generate').click()
   });
 
   it('Should be able to add a new customer', () => {
