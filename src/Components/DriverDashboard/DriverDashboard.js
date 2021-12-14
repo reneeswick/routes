@@ -11,15 +11,6 @@ import {getRoutingData, patchLocationComplete} from "./../../util/api"
 
 
 const DriverDashboard = () => {
-  /////////Test Data///////////
-  // const trialLocations = [
-  //     {name:"Company Name1", disposalTime: 10, latitude:32.7641, longitude:-117.152680, city: "San Diego", state: "California", streetAddress: "123 America Way"},
-  //     {name:"Company Name2", disposalTime: 15, latitude:32.886520, longitude:-117.2263, city: "San Diego", state: "California", streetAddress: "123 America Way"},
-  //     {name:"Company Name3", disposalTime: 25, latitude:35.6570351, longitude:-105.0962085, city: "San Diego", state: "California", streetAddress: "123 America Way"},
-  //     {name:"Company Name4", disposalTime: 10, latitude:36.6570351, longitude:-106.0962085, city: "San Diego", state: "California", streetAddress: "123 America Way"},
-  //     {name:"Company Name5", disposalTime: 30, latitude:37.6570351, longitude:-107.0962085, city: "San Diego", state: "California", streetAddress: "123 America Way"},
-  // ]
-////////////////////////////////
   const [selectedDay, setSelectedDay] = useState("Monday")
   const [routeLocations, setRouteLocations] = useState([])
   const [driverID, setDriverID] = useState(17)
@@ -29,17 +20,13 @@ const DriverDashboard = () => {
     .then(data => setRouteLocations(data.data.routeRequest))
   }, [selectedDay])
 
-
   const markCompleted = (location) => {
     setRouteLocations((prevState) => {
       return prevState.filter(locations => locations.locationId !== location.locationId);
     })
     patchLocationComplete(location.locationId)
     .then(data => console.log(data))
-
   }
-
-
 
   const submitDate = (date) => {
     setRouteLocations([])
@@ -63,7 +50,6 @@ const DriverDashboard = () => {
     }
   }
 
-
   return (
     <div className="driver-dashboard">
       {routeLocations.length<1 && <LoadingCover/>}
@@ -82,7 +68,3 @@ const DriverDashboard = () => {
 }
 
 export default DriverDashboard;
-
-
-// get routingData - update state with data
-//
