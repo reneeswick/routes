@@ -28,10 +28,17 @@ describe('Add New Customer Form Flow', () => {
       .should('be.visible')
       .select('4')
   });
+
   it.skip('Should be able to submit new customer', () => {
     cy.get('button'),contains('Create').click()
     cy.get('.pop-message').should('be.visible')
 
+  });
+
+  it('Should be able to return to the driver dashboard', () => {
+    cy.get('.return-to-dash').click()
+    cy.url().should('include', '/driver')
   })
+
 
 });
