@@ -1,6 +1,6 @@
 .add-new-customer-form {
   display: flex;
-  
+
   flex-direction: column;
   margin: 0 auto;
 }
@@ -16,7 +16,6 @@ input[name=street2]{
   background-color:rgba(223, 223, 223, 0.5);
   outline: none;
 }
-
 
 input[type=text]:focus {
   border: 3px solid rgba(73, 209, 219, 0.199);

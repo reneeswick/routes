@@ -21,7 +21,6 @@ const RouteCard = ({locations, markCompleted}) => {
   return (
     <section  className='route-cards-container'>{cards}</section>
   )
-
 }
 
 export default RouteCard;
