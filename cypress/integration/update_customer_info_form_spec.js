@@ -20,4 +20,9 @@ describe('Update customer info form flow', () => {
   it.skip('Should be able to submit updated customer info', () => {
     cy.get('customer-form-btn').click()
   });
+
+  it('Should be able to navigate back to customer dashboard', () => {
+    cy.get('.return-to-dash').click({force:true})
+    cy.url().should('include', '/customer')
+  });
 });
