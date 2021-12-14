@@ -2,14 +2,15 @@
     width: 100%;
     height:calc(100vh - 100px);
 }
+
 .background{
     position: absolute;
     width: 100%;
     left:0;
     height: auto;
     overflow: hidden;
-    
 }
+
 .background img{
     filter: blur(10px);
     width: 105%;
@@ -17,6 +18,7 @@
     object-fit: cover;
     object-position: 70% 0
 }
+
 .landing-main-info-container{
     height: 400px;
     min-width: none;
