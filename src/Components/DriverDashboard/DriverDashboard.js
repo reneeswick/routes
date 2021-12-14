@@ -21,10 +21,9 @@ const DriverDashboard = ({id}) => {
   // ]
 ////////////////////////////////
   if(id===null){id=17}
-  
+
   const [selectedDay, setSelectedDay] = useState("Monday")
   const [routeLocations, setRouteLocations] = useState([])
-
   const [driverID, setDriverID] = useState(id)
 
   useEffect(() => {
