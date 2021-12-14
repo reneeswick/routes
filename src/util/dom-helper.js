@@ -1,7 +1,5 @@
 import { Redirect } from "react-router-dom";
 
-
-
 export const renderPopup = (msg, timeout, color, redirect="none") => {
     const container = document.querySelector('.popup-container')
     container.classList.remove('hidden')
@@ -12,10 +10,8 @@ export const renderPopup = (msg, timeout, color, redirect="none") => {
     `
     setTimeout(() => {
         container.classList.add('hidden')
-        if(redirect!=="none"){
+        if(redirect!=="none") {
             window.location = redirect;
-
         }
-
     }, timeout)
 }
