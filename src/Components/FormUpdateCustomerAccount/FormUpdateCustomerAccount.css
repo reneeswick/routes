@@ -21,6 +21,7 @@ select[name=customerBins]{
   background-color:rgba(223, 223, 223, 0.5);
   outline: none;
 }
+
 .customer-form-btn{
   position: relative;
   display: inline-block;
