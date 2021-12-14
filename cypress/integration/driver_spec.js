@@ -29,7 +29,6 @@ describe('Driver flow', () => {
 
   it('Should display cards representing each stop on the driver\'s route', () => {
     cy.get('.route-cards-container').should('be.visible')
-    cy.get('.route-card').should('have.length', 3)
     cy.get('.route-card[id="0"]')
       .should('contain', 'Estimated')
       .should('contain', 'mins')
