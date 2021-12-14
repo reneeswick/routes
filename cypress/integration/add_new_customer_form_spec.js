@@ -38,7 +38,7 @@ describe('Add New Customer Form Flow', () => {
   it('Should be able to return to the driver dashboard', () => {
     cy.get('.return-to-dash').click()
     cy.url().should('include', '/driver')
-  })
+  });
 
 
 });
