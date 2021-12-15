@@ -10,7 +10,7 @@ Mod 4 + Capstone
   - [Install + Setup](#setup)
   - [Contributors](#front-end-engineering-contributors)
   - [Wins](#wins)
-  - [Challenges + Improvements](#challenges-+-Improvements)
+  - [Challenges + Improvements](#improvements)
   - [Project Specs](#project-specs)
 
 ## Abstract
@@ -34,8 +34,7 @@ Routes is a responsive and interactive application designed for San Diego Medica
   - GraphQL API  
 
 ## Illustrations
-
-Use https://gifcap.dev/ to make GIFs
+![Application Walk-Through](https://user-images.githubusercontent.com/83723401/146247429-084ba154-e0a4-402a-a4fa-21b6a0708a09.gif)
 
 ## Code Architecture
 This project was bootstrapped with [Create React App](https://create-react-app.dev/).
@@ -56,6 +55,7 @@ This project was bootstrapped with [Create React App](https://create-react-app.d
 ## Front-End Engineering Contributors
   - [Nate Sheridan](https://gist.github.com/natesheridan)
   - [Renee Swick-Ziller](https://github.com/reneeswick)
+  - BE contributors can be found [here](https://github.com/ozzman84/routes-BE)
 
 ## Wins
   - ``Routing!``
@@ -64,8 +64,8 @@ This project was bootstrapped with [Create React App](https://create-react-app.d
   - ``Architecture!``
     - Creating an application with two different types of users posed an interesting problem for code architecture. The decision to create a parent component for the Driver and another for the Customer offers an opportunity to add more features for each user while maintaining their data in a thoughtful and logical manner.
   
-## Challenges + Improvements
-	- ``User Authentication``
+## Improvements
+- ``User Authentication``
     - Currently, the application is hard coded with a specific driver and a specific customer. In the future, the landing page would be a spot for any existing driver or customer could be authenticated and login.
     
 - ``Web Sockets``
