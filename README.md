@@ -22,9 +22,9 @@ Routes is a responsive and interactive application designed for San Diego Medica
 <img width="200" alt="Screen Shot 2021-12-15 at 10 00 49 AM" src="https://user-images.githubusercontent.com/83723401/146231123-c2faaaff-4e1f-46a7-a6ad-1026fa9dcf25.png">
 </div>
 
-``Drivers`` can view their driving route for the day optimized by our back-end team as well as mark-off when a location's service is complete. Drivers also have administrative acess to add customer info to a certain day's route. 
+``Drivers`` can view their driving route for the day optimized by our back-end team. Additionally, they can "mark-off" when a location's service is complete. Drivers also have administrative acess to add customer info to a certain day's route. 
 
-``Customers`` can login and track their driver as well as updated their service agreement.
+``Customers`` can login and track their driver as well as update their service agreement.
 
 ## Technologies
   - React
