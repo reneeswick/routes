@@ -8,7 +8,7 @@
     left:0;
     height: auto;
     overflow: hidden;
-    
+
 }
 .background img{
     filter: blur(10px);
@@ -19,6 +19,7 @@
 }
 .landing-main-info-container{
     height: 400px;
+    text-decoration: none;
     min-width: none;
     max-width: 40em;
     padding: 10px;
