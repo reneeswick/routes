@@ -28,6 +28,7 @@ Routes is a responsive and interactive application designed for San Diego Medica
 
 ## Technologies
   - React
+  - React Router
   - Leaflet.js
   - Leaflet-Routing-Machine
   - React Reveal
