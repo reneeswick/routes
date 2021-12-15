@@ -30,6 +30,7 @@ Routes is a responsive and interactive application designed for San Diego Medica
   - React
   - Leaflet.js
   - Leaflet-Routing-Machine
+  - React Reveal
   - Cypress
   - GraphQL API  
 
