@@ -59,7 +59,7 @@ This project was bootstrapped with [Create React App](https://create-react-app.d
   - BE contributors can be found [here](https://github.com/ozzman84/routes-BE)
 
 ## Wins
-  - ``Routing!``
+  - ``Map Routing!``
     - This was our first time integrating a dynamic map into an application. Learning and implementing leaflet.js and leaflet-routing-machine was a central goal of this project, and we were happy to get it up and running in conjunction with the Back-End team's API that provides route optimization. 
 
   - ``Architecture!``
