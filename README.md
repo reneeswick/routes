@@ -14,7 +14,7 @@ Mod 4 + Capstone
   - [Project Specs](#project-specs)
 
 ## Abstract
-Routes is a responsive and interactive application designed for San Diego Medical Waste. Two users have acess to the features of this application. 
+Routes is a responsive and interactive application designed for San Diego Medical Waste. Two users have access to the features of this application. 
 
 <div style="display: flex">
   <img width="200" alt="Screen Shot 2021-12-15 at 10 00 21 AM" src="https://user-images.githubusercontent.com/83723401/146231094-8134b5c1-b16e-4b0e-b5fa-7646b7b91a56.png">
