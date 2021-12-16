@@ -18,7 +18,7 @@
     object-position: 70% 0
 }
 .landing-main-info-container{
-    height: 400px;
+    height: 450px;
     min-width: none;
     max-width: 40em;
     padding: 10px;
@@ -28,4 +28,9 @@
     border-radius: 50px;
     border: 2px solid rgba(73, 209, 219, 0.199);
     text-align: center;
+}
+.landing-buttons{
+    display: flex;
+    justify-content: space-evenly;
+    display: flex;
 }
