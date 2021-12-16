@@ -22,16 +22,14 @@ const LandingPage = () => {
                     <p>
                     Customers can login and track their driver as well as update their service agreement.
                     </p>
-                    <Fade left delay={1000}>
-                      <Link to='/driver'>
-                        <button className="button">Driver</button>
-                      </Link>
-                    </Fade>
-                    <Fade right delay={1000}>
-                      <Link to='/customer'>
-                        <button className="button">Customer</button>
-                      </Link>
-                    </Fade>
+                    <div className ="landing-buttons">
+                        <Fade left delay={1000}>
+                            <button className="button">Driver</button>
+                        </Fade>
+                        <Fade right delay={1000}>
+                            <button className="button">Customer</button>
+                        </Fade>
+                    </div>
                 </div>
             </Fade>
         </div>
