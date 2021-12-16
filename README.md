@@ -68,10 +68,10 @@ This project was bootstrapped with [Create React App](https://create-react-app.d
   
 ## Improvements
 - ``User Authentication``
-    - Currently, the application is hard coded with a specific driver and a specific customer. In the future, the landing page would be a spot for any existing driver or customer could be authenticated and login.
+    - Currently, the application is hard coded with a specific driver and a specific customer. In the future, the landing page would be a spot for any existing driver or customer through the implementation of authentication.
     
 - ``Web Sockets``
-  - Future iterations would use a web socket for the customer to dynamically track their driver's approximated arrival.
+  - Future iterations would use a web socket for the customer to dynamically track their driver's approximated arrival time.
 
 
 ## Project Specs
