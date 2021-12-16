@@ -13,7 +13,7 @@ const DynamicTracking = ({updateCard, pickupNum, noPickups}) => {
     {!noPickups ?
       <div className='tracking-msg'>
         {pickupNum[0]===0 &&
-          <p>Your the next pickup please be ready!</p>
+          <p>You're the next pickup, please be ready!</p>
         }
         {pickupNum[0]>0 &&
           <p>Your driver is {pickupNum[0]} stops away!</p>
