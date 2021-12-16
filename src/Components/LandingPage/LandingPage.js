@@ -13,7 +13,13 @@ const LandingPage = () => {
                 <div className="landing-main-info-container">
                     <h2>Landing Page</h2>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque justo sapien, rutrum in ipsum in, tincidunt venenatis libero. Praesent consequat in risus a maximus. Nam elementum felis rutrum erat volutpat, ut egestas lectus tempor. Donec ut ante tincidunt, sollicitudin velit nec, aliquet velit. Donec eu purus pretium, fermentum risus eget, gravida augue. Nullam ac nisi vehicula, posuere lorem sit amet, ullamcorper risus. In nec pharetra ligula. Curabitur tincidunt nisi enim, commodo.
+                    Routes is a responsive and interactive application designed for San Diego Medical Waste. Two users have access to the features of this application.
+                    </p>
+                    <p>
+                    Drivers can view their driving route for the day optimized by our back-end team. Additionally, they can "mark-off" when a location's service is complete. Drivers also have administrative acess to add customer info to a certain day's route.
+                    </p>
+                    <p>
+                    Customers can login and track their driver as well as update their service agreement.
                     </p>
                     <Fade left delay={1000}>
                         <button className="button">Driver</button>
