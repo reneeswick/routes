@@ -18,7 +18,7 @@ const FormUpdateCustomerAccount = () => {
     <>
       <h1 className='subheader'>Update Customer Account</h1>
       <Link to='/customer'>
-        <button className='secondary-btn return-to-dash'>Return to Customer Dashboard</button>
+        <button className='secondary-btn'>Return to Customer Dashboard</button>
       </Link>
       <form className='update-customer-info-form'>
         <label>Select a New Pickup Day</label>

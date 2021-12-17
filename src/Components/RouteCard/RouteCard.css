@@ -29,8 +29,7 @@
   color: #800000;
 }
 
-.secondary-btn,
-.return-to-dash {
+.secondary-btn, .return-to-dash {
   background-color: #159EEC;
   padding: .25rem;
   border: none;
@@ -39,8 +38,7 @@
   cursor: pointer;
 }
 
-.secondary-btn:hover,
-.return-to-dash:hover {
+.secondary-btn:hover, .return-to-dash:hover {
   background-color: #1E2A6A;
   color: white;
   transition: .5s;
