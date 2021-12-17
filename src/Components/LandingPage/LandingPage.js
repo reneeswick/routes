@@ -24,10 +24,14 @@ const LandingPage = () => {
                     </p>
                     <div className ="landing-buttons">
                         <Fade left delay={1000}>
+                          <Link to='/driver'>
                             <button className="button">Driver</button>
+                          </Link>
                         </Fade>
                         <Fade right delay={1000}>
+                          <Link to='/customer'>
                             <button className="button">Customer</button>
+                          </Link>
                         </Fade>
                     </div>
                 </div>

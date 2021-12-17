@@ -4,13 +4,9 @@ import { updateCustomerAccount } from './../../util/api';
 import './FormUpdateCustomerAccount.css';
 
 const FormUpdateCustomerAccount = () => {
-  // const [street, setStreet] = useState('');
-  // const [city, setCity] = useState('');
-  // const [state, setState] = useState('');
   const [pickupDay, setPickupDay] = useState('');
   const [bins, setBins] = useState(0);
 
-  /*customerID is defaulted to 1 -- needs to be dynamically passed as a prop*/
   const customerId = 7
   let locationID = 14
 
@@ -22,7 +18,7 @@ const FormUpdateCustomerAccount = () => {
     <>
       <h1 className='subheader'>Update Customer Account</h1>
       <Link to='/customer'>
-        <button className='secondary-btn return-to-dash'>Return to Customer Dashboard</button>
+        <button className='secondary-btn'>Return to Customer Dashboard</button>
       </Link>
       <form className='update-customer-info-form'>
         <label>Select a New Pickup Day</label>
