@@ -2,7 +2,6 @@ import React from 'react';
 import './DynamicTracking.css';
 
 const DynamicTracking = ({updateCard, pickupNum, noPickups}) => {
-  console.log(pickupNum);
   /*
   Interpolate number of stops away with the amount of customers serviced === true
   */

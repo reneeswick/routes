@@ -37,7 +37,6 @@ const DriverDashboard = ({id}) => {
       return prevState.filter(locations => locations.locationId !== location.locationId);
     })
     patchLocationComplete(location.locationId)
-    .then(data => console.log(data))
 
   }
 

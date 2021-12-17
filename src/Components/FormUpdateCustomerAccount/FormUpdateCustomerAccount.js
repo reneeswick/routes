@@ -4,9 +4,9 @@ import { updateCustomerAccount } from './../../util/api';
 import './FormUpdateCustomerAccount.css';
 
 const FormUpdateCustomerAccount = () => {
-  const [street, setStreet] = useState('');
-  const [city, setCity] = useState('');
-  const [state, setState] = useState('');
+  // const [street, setStreet] = useState('');
+  // const [city, setCity] = useState('');
+  // const [state, setState] = useState('');
   const [pickupDay, setPickupDay] = useState('');
   const [bins, setBins] = useState(0);
 
