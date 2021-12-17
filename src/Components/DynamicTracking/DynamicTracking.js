@@ -10,7 +10,7 @@ const DynamicTracking = ({updateCard, pickupNum, noPickups}) => {
 
   return (
     <>
-    {!noPickups ?
+    {!noPickups || !pickupNum.length===0 ?
       <div className='tracking-msg'>
         {pickupNum[0]===0 &&
           <p>Your the next pickup please be ready!</p>

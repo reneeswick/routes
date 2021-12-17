@@ -49,7 +49,8 @@ export const createCustomer = (driverId, name) => {
                 driverId
             }}`
 
-    return fetch('https://peaceful-wildwood-61032.herokuapp.com/graphql', {
+    console.log(query)
+        return fetch('https://peaceful-wildwood-61032.herokuapp.com/graphql', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -62,14 +63,13 @@ export const createCustomer = (driverId, name) => {
     .then((data)=> {console.log(data); return data})
 }
 
-export const editCustomerData = (customerId, streetAddress, streetAddress2, city, state, pickupDay, numberOfBins=3) => {
+export const editCustomerData = (customerId, streetAddress, streetAdress2,  city, state, pickupDay, numberOfBins=3) => {
 
 
     //VV NOT SURE BUILDING IS THE RIGHT QUERY VALUE
     const query = `
         mutation { createLocation (
             streetAddress: "${streetAddress}",
-            buildingNumber: "${streetAddress2}",
             city: "${city}",
             state: "${state}",
             pickupDay: "${pickupDay}",
@@ -79,7 +79,6 @@ export const editCustomerData = (customerId, streetAddress, streetAddress2, city
         ) {
             id
             streetAddress
-            buildingNumber
             city
             state
             pickupDay

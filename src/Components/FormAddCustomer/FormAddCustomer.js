@@ -4,7 +4,7 @@ import './FormAddCustomer.css';
 import {createCustomer, editCustomerData } from './../../util/api'
 import {renderPopup} from './../../util/dom-helper'
 
-const FormAddCustomer = () => {
+const FormAddCustomer = ({id}) => {
   const [customerName, setCustomerName] = useState('');
   const [street, setStreet] = useState('');
   const [street2, setStreet2] = useState('');
@@ -14,15 +14,15 @@ const FormAddCustomer = () => {
   const [bins, setBins] = useState('')
   const [error, setError] = useState(null)
 
-  /*DriverID is defaulted to 4 -- needs to be dynamically passed as a prop*/
-  const driverId = 4
-
+  /*DriverID is defaulted to 17 */
+  if(!id){id = 17}
 
   const submitNewCustomer = async () => {
-    let customerIDResponse = await createCustomer(driverId, customerName);
+    let customerIDResponse = await createCustomer(id, customerName);
     console.log(customerIDResponse)
     if(customerIDResponse.error){
       setError(customerIDResponse.error)
+      renderPopup()
     }
     let data =  customerIDResponse.data.createCustomer
 
@@ -89,7 +89,7 @@ const FormAddCustomer = () => {
           <option value='9'>9</option>
         </select>
       </form>
-      <button className='btn-stndrd' onClick={()=>{submitNewCustomer(); renderPopup(`${customerName} has been added to the database`, 3500, "blue", "driver")}}>Create New Customer</button>
+      <button className='btn-stndrd' onClick={()=>{submitNewCustomer();}}>Create New Customer</button>
     </div>
   )
 }

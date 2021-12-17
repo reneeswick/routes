@@ -70,7 +70,7 @@ const DriverDashboard = ({id}) => {
     <div className="driver-dashboard">
       {routeLocations.length<1 && <LoadingCover/>}
       <Welcome />
-      <Link to='/add-new-customer'>
+      <Link to={`/add-new-customer/${id}`}>
         <button className='btn-stndrd add-new-customer'>Add New Customer</button>
       </Link>
       <Calendar submitDate={submitDate}/>
