@@ -20,14 +20,12 @@ const FormAddCustomer = ({id}) => {
 
   const submitNewCustomer = async () => {
     let customerIDResponse = await createCustomer(id, customerName);
-    console.log(customerIDResponse)
 
     if(customerIDResponse.error){
       setError(customerIDResponse.error)
       renderPopup(`${error}`, 3500, "red", `none`)
     }
     let data =  customerIDResponse.data.createCustomer
-    console.log(data)
     setCusId(data.id)
     editCustomerData(data.id, street, street2, city, state, pickupDay, bins)//number of bins is last arg
   }

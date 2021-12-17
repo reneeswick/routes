@@ -6,22 +6,21 @@ import {getRoutingDataCustomerId} from '../../util/api'
 import './CustomerDashboard.css';
 
 const CustomerDashboard = ({id}) => {
-  const [locations, setLocations] = useState([])
+  // const [locations, setLocations] = useState([])
   if(id===null){id=96}
-  const [customerId, setCustomerId] = useState(id)
+  const customerId = id
   const [day, setDay] = useState("Monday")
   const [pickupNum, setPickupNum] = useState([])
   const [emptyData, setEmptyData] = useState(true)
   const [refresh, setRefresh] = useState(1)
 
-  console.log(customerId)
   useEffect(() => {
     getRoutingDataCustomerId(customerId, day)
     .then(data => {
       return data;
     })
     .then(data => {
-      setLocations(data.data.routeRequest)
+      // setLocations(data.data.routeRequest)
       cleanCusData(data.data.routeRequest)
     })
   }, [refresh])
@@ -30,7 +29,7 @@ const CustomerDashboard = ({id}) => {
     setRefresh(refresh+1);
   }
   const cleanCusData = (data) => {
-    if(!data.length>2){ setLocations([]); return}
+    // if(!data.length>2){ setLocations([]); return}
     const dataWithoutStartAndEnd = data.filter(location => location.locationId!==null)
     const customerIndexes = []
     const customerLocations = dataWithoutStartAndEnd.filter((item, i) => {

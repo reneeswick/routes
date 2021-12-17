@@ -25,7 +25,6 @@ const createRoutingMachineLayer = ({ locations }) => {
     units: 'imperial'
   });
 
-  console.log('instance: ', instance)
   return instance;
 
 };
@@ -33,7 +32,7 @@ const createRoutingMachineLayer = ({ locations }) => {
 
 
 const RoutingMachine = createControlComponent(createRoutingMachineLayer);
-console.log(RoutingMachine)
+
 
 
 export default RoutingMachine;

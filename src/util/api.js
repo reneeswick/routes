@@ -10,7 +10,6 @@ export const createCustomer = (driverId, name) => {
                 driverId
             }}`
 
-    console.log(query)
         return fetch('https://peaceful-wildwood-61032.herokuapp.com/graphql', {
         method: 'POST',
         headers: {
@@ -21,7 +20,7 @@ export const createCustomer = (driverId, name) => {
                 }),
     })
     .then((res) => (res.json()))
-    .then((data)=> {console.log(data); return data})
+    .then((data)=> {return data})
 }
 
 export const editCustomerData = (customerId, streetAddress, streetAdress2,  city, state, pickupDay, numberOfBins=3) => {
@@ -57,7 +56,7 @@ export const editCustomerData = (customerId, streetAddress, streetAdress2,  city
         }),
     })
     .then((res) => (res.json()))
-    .then((data)=> {console.log(data); return data})
+    .then((data)=> {return data})
 }
 
 export const getRoutingData = (driverID, pickupDay) => {
@@ -85,7 +84,7 @@ export const getRoutingData = (driverID, pickupDay) => {
         }),
     })
     .then((res) => (res.json()))
-    .then((data)=> {console.log(data); return data})
+    .then((data)=> {return data})
 }
 
 export const patchLocationComplete = (locationID, boolean = true) => {
@@ -99,7 +98,6 @@ export const patchLocationComplete = (locationID, boolean = true) => {
             pickedUp
         }}`
 
-        console.log(query)
     return fetch('https://peaceful-wildwood-61032.herokuapp.com/graphql', {
         method: 'POST',
         headers: {
@@ -110,7 +108,7 @@ export const patchLocationComplete = (locationID, boolean = true) => {
         }),
     })
     .then((res) => (res.json()))
-    .then((data)=> {console.log(data); return data})
+    .then((data)=> {return data})
 }
 
 export const updateCustomerAccount = (locationID, day, bins) => {
@@ -126,7 +124,6 @@ export const updateCustomerAccount = (locationID, day, bins) => {
             numberOfBins
         }}`
 
-        console.log(query)
     return fetch('https://peaceful-wildwood-61032.herokuapp.com/graphql', {
         method: 'POST',
         headers: {
@@ -137,7 +134,7 @@ export const updateCustomerAccount = (locationID, day, bins) => {
         }),
     })
     .then((res) => (res.json()))
-    .then((data)=> {console.log(data); return data})
+    .then((data)=> {return data})
 }
 export const getRoutingDataCustomerId = (cusId, day) => {
     const query = `{
@@ -159,5 +156,5 @@ export const getRoutingDataCustomerId = (cusId, day) => {
         }),
     })
     .then((res) => (res.json()))
-    .then((data)=> {console.log(data); return data})
+    .then((data)=> {return data})
 }

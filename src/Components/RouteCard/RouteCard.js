@@ -7,7 +7,7 @@ const RouteCard = ({locations, markCompleted}) => {
   })
 
   const cards = filteredLocations.map((location, i) => {
-    console.log(location)
+    console.log(location.name, location.customerId)
     return (
       <div key={`${i}${Date.now()}`} className='route-card' id={i}>
         <div className='company-name'>{location.name}</div>
