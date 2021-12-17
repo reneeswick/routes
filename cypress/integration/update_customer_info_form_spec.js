@@ -22,7 +22,7 @@ describe('Update customer info form flow', () => {
   });
 
   it('Should be able to navigate back to customer dashboard', () => {
-    cy.get('.return-to-dash').click({force:true})
+    cy.get('.secondary-btn').click({force:true})
     cy.url().should('include', '/customer')
   });
 });
