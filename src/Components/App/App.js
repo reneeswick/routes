@@ -30,6 +30,12 @@ const App = () => {
             return <DriverDashboard id={parseInt(match.params.id)} />
           }}
         />
+        <Route
+          exact path="/add-new-customer/:id"
+          render={({match}) => {
+            return <FormAddCustomer id={parseInt(match.params.id)} />
+          }}
+        />
         <Route exact path = '/add-new-customer' render = {() => <FormAddCustomer />} />
         <Route exact path = '/update-customer-account' render = {() => <FormUpdateCustomerAccount />} />
       </div>

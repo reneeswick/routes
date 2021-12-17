@@ -7,7 +7,7 @@ import './CustomerDashboard.css';
 
 const CustomerDashboard = ({id}) => {
   const [locations, setLocations] = useState([])
-  if(id===null){id=82}
+  if(id===null){id=96}
   const [customerId, setCustomerId] = useState(id)
   const [day, setDay] = useState("Monday")
   const [pickupNum, setPickupNum] = useState([])
