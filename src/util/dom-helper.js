@@ -13,7 +13,7 @@ export const renderPopup = (msg, timeout, color, redirect="none") => {
     setTimeout(() => {
         container.classList.add('hidden')
         if(redirect!=="none"){
-            window.location = redirect;
+            window.location = `./${redirect}`;
 
         }
 

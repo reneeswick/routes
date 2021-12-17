@@ -13,6 +13,7 @@ const FormAddCustomer = ({id}) => {
   const [pickupDay, setPickupDay] = useState('');
   const [bins, setBins] = useState('')
   const [error, setError] = useState(null)
+  const [cusId, setCusId] = useState(null)
 
   /*DriverID is defaulted to 17 */
   if(!id){id = 17}
@@ -20,12 +21,14 @@ const FormAddCustomer = ({id}) => {
   const submitNewCustomer = async () => {
     let customerIDResponse = await createCustomer(id, customerName);
     console.log(customerIDResponse)
+
     if(customerIDResponse.error){
       setError(customerIDResponse.error)
-      renderPopup()
+      renderPopup(`${error}`, 3500, "red", `none`)
     }
     let data =  customerIDResponse.data.createCustomer
-
+    console.log(data)
+    setCusId(data.id)
     editCustomerData(data.id, street, street2, city, state, pickupDay, bins)//number of bins is last arg
   }
 
@@ -89,7 +92,7 @@ const FormAddCustomer = ({id}) => {
           <option value='9'>9</option>
         </select>
       </form>
-      <button className='btn-stndrd' onClick={()=>{submitNewCustomer();}}>Create New Customer</button>
+      <button className='btn-stndrd' onClick={()=>{submitNewCustomer(); renderPopup(`${customerName} CUS-ID#${cusId} has been added to the database`, 3500, "blue", "driver")}}>Create New Customer</button>
     </div>
   )
 }

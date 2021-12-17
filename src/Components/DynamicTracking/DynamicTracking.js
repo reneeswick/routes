@@ -16,7 +16,7 @@ const DynamicTracking = ({updateCard, pickupNum, noPickups}) => {
           <p>Your the next pickup please be ready!</p>
         }
         {pickupNum[0]>0 &&
-          <p>Your driver is {pickupNum[0]} stops away!</p>
+          <p>Your driver is {pickupNum[0]+1} stops away!</p>
         }
 
         <p>They will arrive in approximately {(pickupNum[0]*15+15)} minutes</p>
